@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<!--
+	Transit by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Mineria de texto - Iniciativa en Activismo de Datos</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="description" content="Minería de texto básica sobre un corpus construido a partir de los comentarios de las noticias más opinadas de un diario local" />
+		<meta name="keywords" content="" />
+		<meta property="og:title" content="amouth - Minería de texto"/>
+		<meta property="og:image" content="/images/open_data.png"/>
+		<meta property="og:url" content="http://amouth.insomnia247.nl/vox_populi.html"/>
+		<meta property="og:description" content="Minería de texto básica sobre un corpus construido a partir de los comentarios de las noticias más opinadas de un diario local"/>
+		<meta name="twitter:card" content="summary"/>
+		<meta name="twitter:url" content="http://amouth.insomnia247.nl/vox_populi.html"/>
+		<meta name="twitter:title" content="amouth - Minería de texto"/>
+		<meta name="twitter:description" content="Minería de texto básica sobre un corpus construido a partir de los comentarios de las noticias más opinadas de un diario local."/>
+		<meta name="twitter:image" content="/images/open_data.png"/>		
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<script src="http://d3js.org/d3.v3.min.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+	</head>
+	<body>
+		<!-- Header -->
+			<header id="header">
+				<h1>Vox Populi</h1>				
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Inicio</a></li>
+						<li><a href="datos/vox_populi.zip">Descarga</a></li>
+						<!--li><a href="generic.html">Generic</a></li>
+						<li><a href="elements.html">Elements</a></li>
+						<li><a href="#" class="button special">Sign Up</a></li-->
+					</ul>
+				</nav>
+			</header>
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="container">
+					<header class="major">					 
+					 <p>Miner&iacute;a de texto b&aacute;sica sobre un corpus construido a partir de los comentarios de las noticias más opinadas de un diario local.</p>
+					</header>					
+					<p>A trav&eacute;s de t&eacute;cnicas de Web Scrapping se reunieron las palabras que componian  las páginas Web de los artículos  m&aacute;s comentandos de un portal colombiano de noticias. El proceso de colección se ejecutó durante 14 días aleatorios, clasificando las palabras en tres categor&iacute;as: titulares, nombres de usuario (quienes opinan) y comentarios.
+					<br/>Sobre los 3 diferentes "corpus" de términos se hizo un análisis  básico de mineria de texto que presentamos a continuación.</p>
+					<section>
+						<h3>Frecuencia:</h3>
+						<ul class="actions">
+							<li><input type="checkbox" id="titulares" name="titulares"><label for="titulares">Ordenar Palabras Titulares</label></li>
+							<li><input type="checkbox" id="usuarios" name="usuarios"><label for="usuarios">Ordenar Nombres de Usuario</label></li>
+							<li><input type="checkbox" id="comentarios" name="comentarios"><label for="comentarios">Ordenar Palabras Comentarios</label></li>
+						</ul>																							
+						<div class="row">
+							<div class="4u 8u(medium) 11u$(small)" id="freuno">							
+							<script>
+								var margin = {top: 20, right: 10, bottom: 30, left: 80},
+									width = parseInt(d3.select('#freuno').style('width'), 10),
+								    //width = 250 - margin.left - margin.right,
+								    width = width - margin.left - margin.right,
+								    height = 1200 - margin.top - margin.bottom;
+								
+								var x = d3.scale.linear().range([0,width]);
+								
+								var y = d3.scale.ordinal().rangeRoundBands([0, height], .1);
+								
+								var xAxis = d3.svg.axis().scale(x).orient("bottom")
+									.tickFormat(d3.format("s"))
+									.tickValues([2,4,6,8,10])
+									;
+								
+								var yAxis = d3.svg.axis().scale(y).orient("left");
+								
+								var svg2 = d3.select("#freuno").append("svg")
+								    .attr("width", width + margin.left + margin.right)
+								    .attr("height", height + margin.top + margin.bottom)
+								    .append("g")
+								    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+								
+								d3.tsv("datos/f_titulares.tsv",  function(error, data) {
+									
+								  data.forEach(function(d) {
+									    d.freq = +d.freq;
+									  });	
+								  y.domain(data.map(function(d) { return d.term; }));
+								  x.domain([0, d3.max(data, function(d) { return d.freq; })]);								  
+								  svg2.append("g")
+								      .attr("class", "axis")
+								      .attr("id", "xcausa")
+								      .attr("transform", "translate(0," + height + ")")
+								      .call(xAxis)								      
+								  
+								  svg2.append("g")
+								      .attr("class", "axis")
+								      .attr("id", "ycausa")
+								      .call(yAxis);      
+								  
+								  svg2.selectAll(".bar")
+								      .data(data)
+								      .enter().append("rect")
+								      .attr("class", "bar_causa")      
+								      .attr("width", function(d) { return x(d.freq); })      
+								      .attr("y", function(d) { return y(d.term); })
+								      .attr("height", y.rangeBand());
+								  
+								  /*order*/
+								  d3.select("#titulares").on("change", change);
+								  var sortTimeout = setTimeout(function() {
+								    d3.select("#titulares").property("checked", true).each(change);
+								  }, 3000);
+
+								  function change() {									
+								    clearTimeout(sortTimeout);
+
+								    // Copy-on-write since tweens are evaluated after a delay.
+								    var y0 = y.domain(data.sort(this.checked
+								        ? function(a, b) { return b.freq - a.freq; }
+								        : function(a, b) { return d3.ascending(a.term, b.term); })
+								        .map(function(d) { return d.term; }))
+								        .copy();
+
+								    svg2.selectAll(".bar_causa")
+								        .sort(function(a, b) { return y0(a.term) - y0(b.term); });
+
+								    var transition = svg2.transition().duration(750),
+								        delay = function(d, i) { return i * 50; };
+
+								    transition.selectAll(".bar_causa")
+								        .delay(delay)
+								        .attr("y", function(d) { return y0(d.term); });
+
+								    transition.select("#ycausa")
+								        .call(yAxis)
+								      .selectAll("g")
+								        .delay(delay);
+								  }
+								  /**/							    
+								});
+							</script>							
+							</div>
+							<div class="4u 8u$(medium) 11u$(small)" id="fredos">							
+							<script>
+								var margin1 = {top: 20, right: 10, bottom: 30, left: 100},
+								    width1 = 250 -  margin1.left - margin1.right,
+								    height1 = 1200 -margin1.top - margin1.bottom;
+								
+								var x1 = d3.scale.linear().range([0,width]);
+								
+								var y1 = d3.scale.ordinal().rangeRoundBands([0, height], .1);
+								
+								var xAxis1 = d3.svg.axis().scale(x1).orient("bottom")
+									.tickFormat(d3.format("s"))
+									.tickValues([2,4,6,8,10])
+									;
+								
+								var yAxis1 = d3.svg.axis().scale(y1).orient("left");
+								
+								var svg = d3.select("#fredos").append("svg")
+								    .attr("width", width1 + margin1.left + margin1.right)
+								    .attr("height", height1 + margin1.top + margin1.bottom)
+								    .append("g")
+								    .attr("transform", "translate(" + margin1.left + "," + margin1.top + ")");
+								
+								d3.tsv("datos/f_usuarios.tsv", function(error, data) {
+								
+								 data.forEach(function(d) {
+									    d.freq = +d.freq;
+								 });
+									
+	
+								  y1.domain(data.map(function(d) { return d.term; }));
+								  x1.domain([0, d3.max(data, function(d) { return d.freq; })]);								  
+								  svg.append("g")
+								      .attr("class", "axis")
+								      .attr("id", "xindi")
+								      .attr("transform", "translate(0," + height1 + ")")
+								      .call(xAxis1)								      
+								  
+								  svg.append("g")
+								      .attr("class", "axis")
+								      .attr("id", "yindi")
+								      .call(yAxis1);      
+								  
+								  svg.selectAll(".bar")
+								      .data(data)
+								      .enter().append("rect")
+								      .attr("class", "bar_indi")      
+								      .attr("width", function(d) { return x1(d.freq); })      
+								      .attr("y", function(d) { return y1(d.term); })
+								      .attr("height", y1.rangeBand())
+								      
+								      
+									  d3.select("#usuarios").on("change", change);
+									  var sortTimeout = setTimeout(function() {
+									    d3.select("#usuarios").property("checked", true).each(change);
+									  }, 3000);
+
+									  function change() {									
+									    clearTimeout(sortTimeout);
+
+									    // Copy-on-write since tweens are evaluated after a delay.
+									    var y0 = y.domain(data.sort(this.checked
+									        ? function(a, b) { return b.freq - a.freq; }
+									        : function(a, b) { return d3.ascending(a.term, b.term); })
+									        .map(function(d) { return d.term; }))
+									        .copy();
+
+									    svg.selectAll(".bar_indi")
+									        .sort(function(a, b) { return y0(a.term) - y0(b.term); });
+
+									    var transition = svg.transition().duration(750),
+									        delay = function(d, i) { return i * 50; };
+
+									    transition.selectAll(".bar_indi")
+									        .delay(delay)
+									        .attr("y", function(d) { return y0(d.term); });
+
+									    transition.select("#yindi")
+									        .call(yAxis)
+									      .selectAll("g")
+									        .delay(delay);
+									  }									  				
+								});																
+							</script>		
+							</div>
+							<div class="4u$ 8u$(medium) 11u$(small)" id="fretres">
+								<script>
+								var margin2 = {top: 20, right: 80, bottom: 30, left: 100},
+								width2 = 350 -  margin.left - margin.right,
+							    height2 = 1200 - margin.top - margin.bottom;
+								
+								var x2 = d3.scale.linear().range([0,width2]);
+								
+								var y2 = d3.scale.ordinal().rangeRoundBands([0, height2], .1);
+								
+								var xAxis2 = d3.svg.axis().scale(x2).orient("bottom")
+									.tickFormat(d3.format("s"))
+									.tickValues([0, 400, 800, 1200, 1600, 2000]);
+								
+								var yAxis2 = d3.svg.axis().scale(y2).orient("left");								
+								
+								var svg3 = d3.select("#fretres").append("svg")
+								    .attr("width", width2 + margin2.left + margin2.right)
+								    .attr("height", height2 + margin2.top + margin2.bottom)
+								    .append("g")
+								    .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
+								
+								d3.tsv("datos/f_comentarios.tsv", function(error, data) {
+									
+								  data.forEach(function(d) {
+									    d.frecuencia = +d.frecuencia;
+									  });
+
+									
+								  y2.domain(data.map(function(d) { return d.termino; }));
+								  x2.domain([0, d3.max(data, function(d) { return d.frecuencia; })]);
+								  
+								  svg3.append("g")
+								      .attr("class", "axis")
+								      .attr("id", "xefec")
+								      .attr("transform", "translate(0," + height2 + ")")								        
+								      .call(xAxis2)
+								      .append("text")      
+								      .attr("x", width2+50)
+								      .attr("dx", ".71em")
+								      .style("text-anchor", "end")
+								      .text("frecuencia");
+								  
+								  svg3.append("g")
+								      .attr("class", "axis")
+								      .attr("id", "yefec")
+								      .call(yAxis2);      
+								  
+								  svg3.selectAll(".bar")
+								      .data(data)
+								      .enter().append("rect")
+								      .attr("class", "bar_efec")      
+								      .attr("width", function(d) { return x2(d.frecuencia); })      
+								      .attr("y", function(d) { return y2(d.termino); })
+								      .attr("height", y2.rangeBand());
+								      
+								  d3.select("#comentarios").on("change", change);
+								  var sortTimeout = setTimeout(function() {
+								    d3.select("#comentarios").property("checked", true).each(change);
+								  }, 3000);
+
+								  function change() {									
+								    clearTimeout(sortTimeout);
+
+								    // Copy-on-write since tweens are evaluated after a delay.
+								    var y0 = y.domain(data.sort(this.checked
+								        ? function(a, b) { return b.frecuencia - a.frecuencia; }
+								        : function(a, b) { return d3.ascending(a.termino, b.termino); })
+								        .map(function(d) { return d.termino; }))
+								        .copy();
+
+								    svg3.selectAll(".bar_efec")
+								        .sort(function(a, b) { return y0(a.termino) - y0(b.termino); });
+
+								    var transition = svg3.transition().duration(750),
+								        delay = function(d, i) { return i * 50; };
+
+								    transition.selectAll(".bar_efec")
+								        .delay(delay)
+								        .attr("y", function(d) { return y0(d.termino); });
+
+								    transition.select("#yefec")
+								        .call(yAxis)
+								      .selectAll("g")
+								        .delay(delay);
+								  }			
+								});
+								</script>
+							</div>														
+						</div>
+						<h3>Relación de términos:</h3>
+						<div class="row">
+							<div class="4u 8u(medium) 11u$(small)" id="heat">
+								<script type="text/javascript">
+								var marginheat = { top: 100, right: 0, bottom: 100, left: 120 },
+						         widthheat = 960 - marginheat.left - marginheat.right,
+						         heightheat = 1080 - marginheat.top - marginheat.bottom,
+						         gridSize = Math.floor(widthheat / 20),
+						         legendElementWidth = gridSize*2,
+						         buckets = 13,
+						         //colors = ["#FFF2BF","#FFE680","#FFCC00","#FFEABF","#FFD680","#FFAC00","#FFE2BF",,"FF8B00"],
+								 colors = ["#FFF9BF","#FFF280","#E0834C","#E76518","#552500"], // alternatively colorbrewer.YlGnBu[9]
+						         terminos = ["andres","arias","autoridad","comunista","criminales","deputa","excelente","felipe","hijo","hijos","malparidos","moral",
+						                 "narcocriminales","pasaran","perro","procurador","puta","referirse","señor","uribe"],
+						         m = 0
+						     d3.tsv("datos/heat.tsv",
+						       function(d) {
+						         return {
+						           termino1: d.termcol,
+						           termino2: d.termrow,
+						           value: +d.score,
+						           number: +d.number
+						         };
+						       },
+						       function(error, data) {
+						         var colorScale = d3.scale.quantile()
+						             .domain([0, buckets - 1, d3.max(data, function (d) { return d.value; })])
+						             .range(colors);
+						
+						         var svg = d3.select("#heat").append("svg")
+						             .attr("width", widthheat + marginheat.left + marginheat.right)
+						             .attr("height", heightheat + marginheat.top + marginheat.bottom)
+						             .append("g")
+						             .attr("transform", "translate(" + marginheat.left + "," + marginheat.top + ")");
+						
+						         var dayLabels = svg.selectAll(".dayLabel")
+						             .data(terminos)
+						             .enter().append("text")
+						               .text(function (d) { return d; })
+						               .attr("x", 0)
+						               .attr("y", function (d, i) { return i * gridSize; })
+						               .style("text-anchor", "end")
+						               .attr("transform", "translate(-6," + gridSize / 1.5 + ")")
+						               .attr("class",  "dayLabel mono axis axis-worktime");
+						
+						         var timeLabels = svg.selectAll(".timeLabel")
+						             .data(terminos)
+						             .enter().append("text")
+						               .text(function(d) { return d; })								               
+						               .attr("x", 2)
+						               .attr("y", function(d, i) { return ((i-1) * gridSize) + 70; })
+						               .style("text-anchor", "start")
+						               .attr("transform", "translate(" + gridSize / 2 + ", -6)")
+						               .attr("transform", function(d) {return "rotate(-90)"})
+						               .attr("class",  "timeLabel mono axis axis-worktime");
+						         		
+						
+						         var heatMap = svg.selectAll(".hour")
+						             .data(data)
+						             .enter().append("rect")
+						             .attr("x", function(d) { if(d.number==1) m++; return (m - 1) * gridSize;})
+						             .attr("y", function(d) { return (d.number - 1) * gridSize; })
+						             .attr("rx", 4)
+						             .attr("ry", 4)
+						             .attr("class", "hour bordered")
+						             .attr("width", gridSize)
+						             .attr("height", gridSize)
+						             .style("fill", colors[0]);
+						
+						         heatMap.transition().duration(1000)
+						             .style("fill", function(d) {if(d.termino1==d.termino2) return "#FFFFFF"; else return colorScale(d.value);});
+						
+						         heatMap.append("title").text(function(d) { return d.value; });
+						             
+						         var legend = svg.selectAll(".legend")
+						             .data([0].concat(colorScale.quantiles()), function(d) { return d; })
+						             .enter().append("g")
+						             .attr("class", "legend");
+						
+						         legend.append("rect")
+						           .attr("x", function(d, i) { return legendElementWidth * i; })
+						           .attr("y", heightheat)
+						           .attr("width", legendElementWidth)
+						           .attr("height", gridSize / 2)
+						           .style("fill", function(d, i) { return colors[i]; });
+						
+						         legend.append("text")
+						           .attr("class", "mono")
+						           .text(function(d) { return "≥ " + Math.round(d); })
+						           .attr("x", function(d, i) { return legendElementWidth * i; })
+						           .attr("y", heightheat + gridSize);
+						     });
+							   </script>									
+							</div>
+						</div>
+					</section>				
+				</div>			
+			</section>			
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">					
+					<div class="row">
+						<div class="8u 12u$(medium)">
+							<ul class="copyright">
+								<li>(amouth)&nbsp;:&nbsp;<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional</a></li>
+								<li>design&nbsp;:&nbsp;<a href="http://templated.co">templated</a></li>								
+							</ul>
+						</div>
+						<div class="4u$ 12u$(medium)">
+							<ul class="icons">								
+								<li>
+									<a class="icon rounded fa-linkedin" href="https://www.linkedin.com/in/amouth" target="_blank"><span class="label">LinkedIn</span></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48011916-1', 'finiterank.github.io');
+  ga('send', 'pageview');
+
+</script>
+	</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<!--
+	Transit by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Datos y mapas - Iniciativa en Activismo de Datos</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="viewport" content="initial-scale=1">
+		<meta name="description" content="Uso de Topojson para ilustrar la accidentalidad en Colombia en el año 2010" />
+		<meta name="keywords" content="" />
+		<meta property="og:title" content="amouth - Datos y mapas"/>
+		<meta property="og:image" content="/images/open_data.png"/>
+		<meta property="og:url" content="http://amouth.insomnia247.nl/bolsa_colombia.html"/>
+		<meta property="og:description" content="Uso de Topojson para ilustrar la accidentalidad en Colombia en el año 2010"/>
+		<meta name="twitter:card" content="summary"/>
+		<meta name="twitter:url" content="http://amouth.insomnia247.nl/bolsa_colombia.html"/>
+		<meta name="twitter:title" content="amouth - Exploración de datos"/>
+		<meta name="twitter:description" content="Uso de Topojson para ilustrar la accidentalidad en Colombia en el año 2010"/>
+		<meta name="twitter:image" content="/images/open_data.png"/>		
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>				
+		<script src="http://d3js.org/d3.v3.min.js"></script>
+		<script src="http://d3js.org/topojson.v1.min.js"></script>
+		<script src="js/d3.tip.v0.6.3.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+	</head>
+	<style>
+
+.states {
+  fill: none;
+  stroke: #fff;
+  stroke-linejoin: round;
+}
+
+</style>
+	<body>
+		<!-- Header -->
+			<header id="header">
+				<h1>Accidentalidad en Colombia 2010</h1>								
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Inicio</a></li>
+						<li><a href="datos/accidentalidad_2010.zip">Descarga</a></li>
+						<!-- li><a href="elements.html">Elements</a></li>
+						<li><a href="#" class="button special">Sign Up</a></li-->
+					</ul>
+				</nav>
+			</header>
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="container">
+					<header class="major">					 
+					 <p>Uso de Mapas para caracterizar los datos de accidentalidad en Colombia en el año 2010.</p>
+					</header>										
+					<p>Explorando el cat&aacute;logo de datos que ofrece la iniciativa del gobierno en datos abiertos (www.datos.gov.co/), nos encontramos con un dataset que permite ilustrar la accidentalidad en Colombia para el año 2010. Con este cojunto de datos fue posible hacer una caraterizaci&oacute;n por cada regi&oacute;n de la variable "tipo afectaci&oacute;n" de los accidentes reportados en ese año.</p>
+					<section>																												
+						<div class="row">
+							<div class="12u$">
+							  <div class="select-wrapper" id="nemotec"><select id="producto"><option value="ATROPELLO">ATROPELLO</option><option value="CAIDA OCUPANTE">CAIDA OCUPANTE</option><option value="CHOQUE">CHOQUE</option><option value="INCENDIO">INCENDIO</option><option value="VOLCAMIENTO">VOLCAMIENTO</option><option value="OTRO">OTRO</option></select></div>
+							</div>							
+							<div class="12u$" id="map">
+  								<script>
+  								var width = $("#map").width(),
+  									gridSize = Math.floor(width / 20),  								
+						            legendElementWidth = gridSize*2,
+						            legendElementHeight = gridSize*2,
+  									variableInit = "ATROPELLO",
+  									colors = ["#FFF9BF","#FFF280","#E0834C","#E76518","#552500"],  									
+  									height = width;
+  								var tip = d3.tip()
+  							  			.attr('class', 'd3-tip')
+  							  			.offset([-10, 0])
+  							  			.html(function(d) {
+  							    			return "<strong style='color:#FAD30F'>"+ d.properties["dpt"] +"</strong></br></br>"+
+  							    			"<strong>ATROPELLO: </strong> <span style='color:#FAD30F'>" + d.properties["ATROPELLO"] + "</span><br>"+
+  							    			"<strong>CAIDA OCUPANTE:</strong> <span style='color:#FAD30F'>" + d.properties["CAIDA OCUPANTE"] + "</span><br>"+
+  							    			"<strong>CHOQUE:</strong> <span style='color:#FAD30F'>" + d.properties["CHOQUE"] + "</span><br>"+
+  							    			"<strong>INCENDIO:</strong> <span style='color:#FAD30F'>" + d.properties["INCENDIO"] + "</span><br>"+
+  							    			"<strong>VOLCAMIENTO:</strong> <span style='color:#FAD30F'>" + d.properties["VOLCAMIENTO"] + "</span><br>"+
+  							    			"<strong>OTRO:</strong> <span style='color:#FAD30F'>" + d.properties["OTRO"] + "</span>";
+  							  			})
+  								var svg = d3.select("#map").append("svg")
+  									.attr("width", '100%')
+    								.attr("height", '100%')
+    								.attr('viewBox','0 0 '+Math.min(width,height)+' '+Math.min(width,height))
+    								.attr('preserveAspectRatio','xMinYMin') ;
+  								svg.call(tip);
+  								d3.json("datos/colombia.json", function(error, co) {										      
+  									//dummmy projection
+  									var projection = d3.geo.mercator().scale(1).translate([0, 0]);									
+  									var subunits = topojson.feature(co, co.objects.depts); 									
+  									// Create a dummy path generator .
+  									var path = d3.geo.path().projection(projection);
+  									// Compute the bounds of a feature of interest, then derive scale & translate.
+  									var b = path.bounds(subunits),
+  								    s = .95 / Math.max((b[1][0] - b[0][0]) / width, (b[1][1] - b[0][1]) / height),
+  								    t = [(width - s * (b[1][0] + b[0][0])) / 2, (height - s * (b[1][1] + b[0][1])) / 2];
+  									// Update the projection to use computed scale & translate.
+  									projection.scale(s).translate(t);
+  									var colorScale = d3.scale.quantile()
+						             .domain([0, d3.max(subunits.features, function (d) {         	 
+						            	 return +d.properties[variableInit];						            	 
+						            })])
+						             .range(colors);
+  									svg.append("path")
+  										.datum(subunits)
+  										.attr("d", path)
+  										//.attr("class", "departamento");
+  									svg.selectAll(".departamento")
+  									    .data(subunits.features)
+  								  		.enter().append("path")
+  								  		.attr("class", "departamento")
+  								  		.style("fill",function(d) {  								  			
+  								  			return colorScale(+d.properties[variableInit])  								  			
+  								  		})
+  								  		.on('mouseover', tip.show)
+      									.on('mouseout', tip.hide)
+  								  		//.style("fill", "#E0834C")								  		
+  								    	.attr("d", path);  									
+  								    svg.append("path")
+  								    .datum(topojson.mesh(co, co.objects.depts, function(a, b) { return a !== b; }))  								    
+  								    .attr("d", path)
+  								    .attr("class", "depto-borde");
+  								  
+  								   var legend = svg.selectAll(".legend")
+						             .data([0].concat(colorScale.quantiles()), function(d) { return d; })
+						             .enter().append("g")
+						             .attr("class", "legend");
+						
+						         legend.append("rect")
+						           .attr("x", function(d, i) { return legendElementWidth * i; })
+						           .attr("y", legendElementHeight)
+						           .attr("width", legendElementWidth)
+						           .attr("height", gridSize / 2)
+						           .style("fill", function(d, i) { return colors[i]; });
+						
+						         legend.append("text")
+						           .attr("class", "mono")
+						           .text(function(d) { return "≥ " + Math.round(d); })
+						           .attr("x", function(d, i) { return legendElementWidth * i; })
+						           .attr("y", legendElementHeight + gridSize);
+						         
+						         	$('#producto').change(function(){
+						         	  	var producto = this.value;
+						         	  	colorScale = d3.scale.quantile().domain([0, d3.max(subunits.features, function (d) {return +d.properties[producto];})]).range(colors);
+						        	  	svg.selectAll(".departamento")
+									    .data(subunits.features)
+								  		.style("fill",function(d) {  								  			
+								  			return colorScale(+d.properties[producto])  								  			
+								  		})
+								  		svg.selectAll(".legend").remove();								  		
+						        	  	var legend = svg.selectAll(".legend")
+							             .data([0].concat(colorScale.quantiles()), function(d) { return d; })
+							             .enter().append("g")
+							             .attr("class", "legend");
+							
+							         	legend.append("rect")
+								           .attr("x", function(d, i) { return legendElementWidth * i; })
+								           .attr("y", legendElementHeight)
+								           .attr("width", legendElementWidth)
+								           .attr("height", gridSize / 2)
+								           .style("fill", function(d, i) { return colors[i]; });
+							
+								         legend.append("text")
+								           .attr("class", "mono")
+								           .text(function(d) { return "≥ " + Math.round(d); })
+								           .attr("x", function(d, i) { return legendElementWidth * i; })
+								           .attr("y", legendElementHeight + gridSize);	    	  
+						         	});
+  								});
+  								d3.select(window).on('resize', resize); 
+  								function resize() {
+  								    // update width
+  								    width = parseInt(d3.select('#map').style('width'), 10);
+  								  	height = width;
+  								    svg.attr("width", width);
+  								    svg.attr("height", height);
+  								}
+								</script>																	
+							</div>						
+						</div>
+					</section>				
+				</div>			
+			</section>			
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">					
+					<div class="row">
+						<div class="8u 12u$(medium)">
+							<ul class="copyright">
+								<li>(amouth)&nbsp;:&nbsp;<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional</a></li>
+								<li>design&nbsp;:&nbsp;<a href="http://templated.co">templated</a></li>								
+							</ul>
+						</div>
+						<div class="4u$ 12u$(medium)">
+							<ul class="icons">								
+								<li>
+									<a class="icon rounded fa-linkedin" href="https://www.linkedin.com/in/amouth" target="_blank"><span class="label">LinkedIn</span></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48011916-1', 'finiterank.github.io');
+  ga('send', 'pageview');
+
+</script>
+	</body>
+</html>

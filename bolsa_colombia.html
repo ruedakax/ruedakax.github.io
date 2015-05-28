@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<!--
+	Transit by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Exploración de datos - Iniciativa en Activismo de Datos</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="description" content="Análisis exploratorio básico del historial de la variable precio de cierre de 36 acciones que cotizan en la Bolsa de Valores de Colombia" />
+		<meta name="keywords" content="" />
+		<meta property="og:title" content="amouth - Exploración de datos"/>
+		<meta property="og:image" content="/images/open_data.png"/>
+		<meta property="og:url" content="http://amouth.insomnia247.nl/bolsa_colombia.html"/>
+		<meta property="og:description" content="Análisis exploratorio básico del historial de la variable precio de cierre de 36 acciones que cotizan en la Bolsa de Valores de Colombia"/>
+		<meta name="twitter:card" content="summary"/>
+		<meta name="twitter:url" content="http://amouth.insomnia247.nl/bolsa_colombia.html"/>
+		<meta name="twitter:title" content="amouth - Exploración de datos"/>
+		<meta name="twitter:description" content="Análisis exploratorio básico del historial de la variable precio de cierre de 36 acciones que cotizan en la Bolsa de Valores de Colombia"/>
+		<meta name="twitter:image" content="/images/open_data.png"/>		
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<script src="http://d3js.org/d3.v3.min.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+	</head>
+	<body>
+		<!-- Header -->
+			<header id="header">
+				<h1>Bolsa de Colombia</h1>								
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Inicio</a></li>
+						<li><a href="datos/bolsa_colombia.zip">Descarga</a></li>
+						<!-- li><a href="elements.html">Elements</a></li>
+						<li><a href="#" class="button special">Sign Up</a></li-->
+					</ul>
+				</nav>
+			</header>
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="container">
+					<header class="major">					 
+					 <p>An&aacute;lisis exploratorio b&aacute;sico del historial de la variable "precio de cierre" de 36 acciones que cotizan en la Bolsa de Valores de Colombia</p>
+					</header>										
+					<p>Haciendo uso de la <span style="color:red">*</span>URL que hace disponible la Bolsa de Valores de Colombia, para la descarga del detalle de sus acciones, se cre&oacute; un proceso de automatizaci&oacute;n que  captur&oacute; los datos de 36 acciones que cotizan en dicha bolsa.         
+					De lo anterior surge este an&aacute;lisis b&aacute;sico  del conjunto de datos obtenidos, que muestra el comportamiento a través de los años del precio de cierre de cada una de ellas.
+					<br/><br/><span style="color:red">*</span>http://www.bvc.com.co/mercados/DescargaXlsServlet?archivo=acciones_detalle&tipoMercado=1&nemo=</p>
+					<section>																												
+						<div class="row">
+							<div class="12u$">
+							  <div class="select-wrapper" id="nemotec"></div>
+							</div>
+							<div class="4u 8u(medium) 11u$(small)" id="bolsa">
+  								<script>
+								  d3.csv("datos/nemotecnicos.csv", function(error, data) {
+								    var select = d3.select("#nemotec")								      
+								      .append("select")
+								
+								    select
+								      .on("change", function(d) {
+								    	  var value = d3.select(this).property("value");
+								    	  updateData(value)
+								      });
+								
+								    select.selectAll("option")
+								      .data(data)
+								      .enter()
+								        .append("option")
+								        .attr("value", function (d) { return d.nemotecnicos; })
+								        .text(function (d) { return d.nemotecnicos; });
+								  });
+								</script>								
+								<script>
+									
+									// Set the dimensions of the canvas / graph
+									var margin = {top: 30, right: 20, bottom: 30, left: 50},
+									    width = 600 - margin.left - margin.right,
+									    height = 270 - margin.top - margin.bottom;
+									
+									// Parse the date / time
+									var parseDate = d3.time.format("%Y-%m-%d").parse;
+									
+									// Set the ranges
+									var x = d3.time.scale().range([0, width]);
+									var y = d3.scale.linear().range([height, 0]);
+									
+									// Define the axes
+									var xAxis = d3.svg.axis().scale(x)
+									    .orient("bottom").ticks(5);
+									
+									var yAxis = d3.svg.axis().scale(y)
+									    .orient("left").ticks(5);
+									
+									// Define the line
+									var valueline = d3.svg.line()
+									    .x(function(d) { return x(d.date); })
+									    .y(function(d) { return y(d.close); });
+									    
+									// Adds the svg canvas
+									var svg = d3.select("#bolsa")
+									    .append("svg")
+									        .attr("width", width + margin.left + margin.right)
+									        .attr("height", height + margin.top + margin.bottom)
+									    .append("g")
+									        .attr("transform", 
+									              "translate(" + margin.left + "," + margin.top + ")");
+									
+									// Get the data
+									d3.csv("datos/bolsa/BBVACOL.csv", function(error, data) {
+									    data.forEach(function(d) {
+									        d.date = parseDate(d.fecha);
+									        d.close = +d.PrecioCierre;
+									    });
+									
+									    // Scale the range of the data
+									    x.domain(d3.extent(data, function(d) { return d.date; }));
+									    y.domain([0, d3.max(data, function(d) { return d.close; })]);
+									
+									    // Add the valueline path.
+									    svg.append("path")
+									        .attr("class", "line")
+									        .attr("d", valueline(data));
+									
+									    // Add the X Axis
+									    svg.append("g")
+									        .attr("class", "x axisb")
+									        .attr("transform", "translate(0," + height + ")")
+									        .call(xAxis);
+									
+									    // Add the Y Axis
+									    svg.append("g")
+									        .attr("class", "y axisb")
+									        .call(yAxis);
+									
+									});
+									
+									// ** Update data section (Called from the onclick)
+									function updateData(newnemo) {
+										//alert(newnemo)
+										var newfile = "datos/bolsa/" + newnemo + ".csv";
+									    // Get the data again
+									    d3.csv(newfile, function(error, data) {
+									       	data.forEach(function(d) {
+										    	d.date = parseDate(d.fecha);
+										    	d.close = +d.PrecioCierre;
+										    });
+									
+									    	// Scale the range of the data again 
+									    	x.domain(d3.extent(data, function(d) { return d.date; }));
+										    y.domain([0, d3.max(data, function(d) { return d.close; })]);
+									
+									    // Select the section we want to apply our changes to
+									    var svg = d3.select("body").transition();
+									
+									    // Make the changes
+									        svg.select(".line")   // change the line
+									            .duration(750)
+									            .attr("d", valueline(data));
+									        svg.select(".x.axis") // change the x axis
+									            .duration(750)
+									            .call(xAxis);
+									        svg.select(".y.axis") // change the y axis
+									            .duration(750)
+									            .call(yAxis);
+									
+									    });
+									}
+									
+								</script>																	
+							</div>						
+						</div>
+					</section>				
+				</div>			
+			</section>			
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">					
+					<div class="row">
+						<div class="8u 12u$(medium)">
+							<ul class="copyright">
+								<li>(amouth)&nbsp;:&nbsp;<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional</a></li>
+								<li>design&nbsp;:&nbsp;<a href="http://templated.co">templated</a></li>								
+							</ul>
+						</div>
+						<div class="4u$ 12u$(medium)">
+							<ul class="icons">								
+								<li>
+									<a class="icon rounded fa-linkedin" href="https://www.linkedin.com/in/amouth" target="_blank"><span class="label">LinkedIn</span></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48011916-1', 'finiterank.github.io');
+  ga('send', 'pageview');
+
+</script>
+	</body>
+</html>
