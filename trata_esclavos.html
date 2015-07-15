@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<!--
+	Transit by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Análisis histórico: trata de esclavos - Iniciativa en Activismo de Datos</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="description" content="Análisis del registro histórico de viajes trasatlánticos de trata de de esclavos que desembarcaron en Colombia entre los años 1549 y 1742" />
+		<meta name="keywords" content="" />
+		<meta property="og:title" content="amouth - Análisis histórico: trata de esclavos"/>
+		<meta property="og:image" content="/images/open_data.png"/>
+		<meta property="og:url" content="http://ruedakax.github.io/trata_esclavos.html"/>
+		<meta property="og:description" content="Análisis del registro histórico de viajes trasatlánticos de trata de de esclavos que desembarcaron en Colombia entre los años 1549 y 1742"/>
+		<meta name="twitter:card" content="summary"/>
+		<meta name="twitter:url" content="http://ruedakax.github.io/trata_esclavos.html"/>
+		<meta name="twitter:title" content="amouth - Análisis histórico: trata de esclavos"/>
+		<meta name="twitter:description" content="Análisis del registro histórico de viajes trasatlánticos de trata de de esclavos que desembarcaron en Colombia entre los años 1549 y 1742"/>
+		<meta name="twitter:image" content="/images/open_data.png"/>		
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<script src="http://d3js.org/d3.v3.min.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+	</head>
+	
+	<body>
+		<!-- Header -->
+			<header id="header">
+				<h1>Histórico : trata de esclavos</h1>				
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Inicio</a></li>
+						<li><a href="datos/slave.zip">Descarga</a></li>
+						<!--li><a href="generic.html">Generic</a></li>
+						<li><a href="elements.html">Elements</a></li>
+						<li><a href="#" class="button special">Sign Up</a></li-->
+					</ul>
+				</nav>
+			</header>
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="container">
+					<header class="major">					 
+					 <p>Análisis del registro histórico de viajes trasatlánticos de trata de de esclavos que desembarcaron en Colombia entre los años 1549 y 1742 </p>
+					</header>					
+					<p>Haciendo uso de la base de datos del sitio <strong>slavevoyages.org</strong>, que pone a disposición los registros de viajes transatlánticos dedicados a la trata de esclavos, se hizo un filtro de aquellos viajes que en la variable de lugar de desembarco tenian como dato algún puerto de Colombia. En total se obtuvo el registro de 603 viajes que dan cuenta de un pequeño trozo de la historia en la que solo los puertos de Cartagena y Santa Marta están involucrados y de los cuales se desprende el siguiente análisis</p>
+					<section>
+						<h3>Cantidad de esclavos transladados por año:</h3>																													
+						<div class="row">
+							<div class="12u$" id="freuno">							
+							<script>
+							var margin = {top: 20, right: 10, bottom: 30, left: 80},
+							width = parseInt(d3.select('#freuno').style('width'), 10),
+						    //width = 250 - margin.left - margin.right,
+						    width = width - margin.left - margin.right,
+						    height = 1200 - margin.top - margin.bottom;
+						
+						var x = d3.scale.linear().range([0,width]);
+						
+						var y = d3.scale.ordinal().rangeRoundBands([0, height], .1);
+						
+						var xAxis = d3.svg.axis().scale(x).orient("bottom")
+							.tickFormat(d3.format("s"))
+							//.tickValues([2,4,6,8,10])
+							;
+						var xAxistop = d3.svg.axis().scale(x).orient("top")
+						.tickFormat(d3.format("s"))
+						//.tickValues([2,4,6,8,10])
+						;
+						
+						var yAxis = d3.svg.axis().scale(y).orient("left");
+						
+						var svg2 = d3.select("#freuno").append("svg")
+						    .attr("width", width + margin.left + margin.right)
+						    .attr("height", height + margin.top + margin.bottom)
+						    .append("g")
+						    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+						
+						d3.tsv("datos/slave/quant_per_year.tsv",  function(error, data) {
+							
+						  data.forEach(function(d) {
+							    d.slamimp = +d.slamimp;
+							  });	
+						  y.domain(data.map(function(d) { return d.yearam; }));
+						  x.domain([0, d3.max(data, function(d) { return d.slamimp; })]);								  
+						  svg2.append("g")
+						      .attr("class", "axis")
+						      .attr("id", "xcausa")
+						      .attr("transform", "translate(0," + height + ")")
+						      .call(xAxis)								      
+						  
+						  svg2.append("g")
+						      .attr("class", "axis")
+						      .attr("id", "ycausa")
+						      .call(yAxis);
+						  
+						  svg2.append("g")
+					      .attr("class", "axis")
+					      .attr("id", "xcausa")
+					      .call(xAxistop);   
+						  
+						  svg2.selectAll(".bar")
+						      .data(data)
+						      .enter().append("rect")
+						      .attr("class", "bar_causa")      
+						      .attr("width", function(d) { return x(d.slamimp); })      
+						      .attr("y", function(d) { return y(d.yearam); })
+						      .attr("height", y.rangeBand());						  
+						  /**/							    
+						});	
+							</script>							
+							</div>
+							<p>&nbsp;</p>
+							<p>&nbsp;</p>
+							</div>
+							<h3>Cantidad de esclavos desembarcados según la nacionalidad de la embarcación:</h3>
+							<div class="row">
+							<div class="12u$" id="fredos">							
+								<svg width="982" height="300">
+								 <g transform="translate(80,20)">
+								  <defs>
+								  	<pattern id="bandera0" width="192" height="192" patternUnits="userSpaceOnUse">
+								  	 <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="" width="192" height="192" x="0" y="0"></image>
+								  	</pattern>								  	
+								  	<pattern id="bandera1" width="34" height="34" patternUnits="userSpaceOnUse" x="-16" y="7">
+								  	 <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg" width="32" height="32" x="0" y="0"></image>
+								  	</pattern>
+								  	<pattern id="bandera2" width="56" height="56" patternUnits="userSpaceOnUse" x="-1" y="-14">
+								  	 <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://upload.wikimedia.org/wikipedia/commons/a/ae/Flag_of_the_United_Kingdom.svg" width="54" height="54" x="0" y="0"></image>
+								  	</pattern>
+								  	<pattern id="bandera3" width="60" height="60" patternUnits="userSpaceOnUse" x="0" y="-25">
+								  	 <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://upload.wikimedia.org/wikipedia/commons/2/20/Flag_of_the_Netherlands.svg" width="60" height="60" x="0" y="0"></image>
+								  	</pattern>
+								  	<pattern id="bandera4" width="195" height="195" patternUnits="userSpaceOnUse" x="-52" y="27">
+								  	 <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_Portugal.svg" width="195" height="195" x="0" y="0"></image>
+								  	</pattern>							  									  	
+								  	<pattern id="bandera5" width="126" height="126" patternUnits="userSpaceOnUse" x="-22" y="62">
+								  	 <image xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" width="126" height="126" x="0" y="0"></image>
+								  	</pattern>
+								  </defs>
+								  <circle cx="480" cy="125" r="64" style="fill: url(#bandera0); stroke: rgb(204, 204, 204);"></circle>
+								  <circle cx="34" cy="125" r="11" style="fill: url(#bandera1); stroke: rgb(204, 204, 204);"></circle>
+								  <circle cx="82" cy="125" r="14" style="fill: url(#bandera2); stroke: rgb(204, 204, 204);"></circle>
+								  <circle cx="132" cy="125" r="15" style="fill: url(#bandera3); stroke: rgb(204, 204, 204);"></circle>
+								  <circle cx="610" cy="125" r="65" style="fill: url(#bandera4); stroke: rgb(204, 204, 204);"></circle>
+								  <circle cx="285" cy="125" r="42" style="fill: url(#bandera5); stroke: rgb(204, 204, 204);"></circle>								  								  
+								 </g>
+								 <g class="axis" id="xcausa" transform="translate(0,250)">
+								  <g class="tick" transform="translate(0,0)" style="opacity: 1;">
+								   <line y2="6" x2="0"></line>
+								   <text dy=".71em" y="9" x="0" style="text-anchor: middle;">0</text>
+								  </g>
+								  <g class="tick" transform="translate(110,0)" style="opacity: 1;">
+								   <line y2="6" x2="0"></line>
+								   <text dy=".71em" y="9" x="0" style="text-anchor: middle;">2.2K</text>
+								   <text dy=".71em" y="25" x="0" style="text-anchor: middle;">Francia</text>
+								  </g>
+								  <g class="tick" transform="translate(160,0)" style="opacity: 1;">
+								   <line y2="6" x2="0"></line>
+								   <text dy=".71em" y="9" x="0" style="text-anchor: middle;">2.7K</text>
+								   <text dy=".71em" y="25" x="0" style="text-anchor: middle;">Reino</text>
+								   <text dy=".71em" y="41" x="0" style="text-anchor: middle;">Unido</text>
+								  </g>
+								  <g class="tick" transform="translate(210,0)" style="opacity: 1;">
+								   <line y2="6" x2="0"></line>
+								   <text dy=".71em" y="9" x="0" style="text-anchor: middle;">2.9K</text>
+								   <text dy=".71em" y="25" x="0" style="text-anchor: middle;">Países</text>
+								   <text dy=".71em" y="41" x="0" style="text-anchor: middle;">Bajos</text>
+								  </g>
+								  <g class="tick" transform="translate(360,0)" style="opacity: 1;">
+								   <line y2="6" x2="0"></line>
+								   <text dy=".71em" y="9" x="0" style="text-anchor: middle;">15.5K</text>
+								   <text dy=".71em" y="25" x="0" style="text-anchor: middle;">España</text>								   
+								  </g>
+								  <g class="tick" transform="translate(560,0)" style="opacity: 1;">
+								   <line y2="6" x2="0"></line>
+								   <text dy=".71em" y="9" x="0" style="text-anchor: middle;">37.2K</text>
+								   <text dy=".71em" y="25" x="0" style="text-anchor: middle;">Nacionalidad</text>								   
+								   <text dy=".71em" y="41" x="0" style="text-anchor: middle;">No definida</text>
+								  </g>
+								  <g class="tick" transform="translate(690,0)" style="opacity: 1;">
+								   <line y2="6" x2="0"></line>
+								   <text dy=".71em" y="9" x="0" style="text-anchor: middle;">48K</text>
+								   <text dy=".71em" y="25" x="0" style="text-anchor: middle;">Portugal</text>
+								  </g>
+								  <path class="domain" d="M0,6V0H892V6"></path>
+								 </g>
+								</svg>									
+							</div>
+							<p>&nbsp;</p>
+							<p>&nbsp;</p>
+							<p>&nbsp;</p>
+							<p>&nbsp;</p>
+							</div>
+							<h3>Nombres de Barco Registrados:</h3>
+							<div class="row">
+							<div class="12u$" id="fretres">
+								<img src="images/shipnames.png"/>
+							</div>
+							<p>&nbsp;</p>
+							<p>&nbsp;</p>
+							<p>&nbsp;</p>
+							<p>&nbsp;</p>
+							</div>
+						<h3>Nombres de Capitán Registrados:</h3>
+						<div class="row">
+							<div class="12u$" id="fretres">
+								<img src="images/capnames.png"/>
+							</div>
+						</div>
+					</section>				
+				</div>			
+			</section>			
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">					
+					<div class="row">
+						<div class="8u 12u$(medium)">
+							<ul class="copyright">
+								<li>(amouth)&nbsp;:&nbsp;<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional</a></li>
+								<li>design&nbsp;:&nbsp;<a href="http://templated.co">templated</a></li>								
+							</ul>
+						</div>
+						<div class="4u$ 12u$(medium)">
+							<ul class="icons">								
+								<li>
+									<a class="icon rounded fa-linkedin" href="https://www.linkedin.com/in/amouth" target="_blank"><span class="label">LinkedIn</span></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-62756510-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	</body>
+</html>
