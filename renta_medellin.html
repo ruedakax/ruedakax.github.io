@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--
+	Transit by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>arrendamientos en Medellín - Iniciativa en Activismo de Datos</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+		<meta name="description" content="Análisis exploratorio de un conjunto de datos relacionado a la oferta de apartamentos para alquiler en la ciudad de Medellín" />
+		<meta name="keywords" content="Analisis exploratorio de un conjunto de datos relacionado a la oferta de apartamentos para alquiler en la ciudad de Medellín" />
+		<meta property="og:title" content="amouth - Arrendamientos en Medellín"/>
+		<meta property="og:image" content="/images/open_data.png"/>
+		<meta property="og:url" content="http://ruedakax.github.io/renta_medellin.html"/>
+		<meta property="og:description" content="Analisis exploratorio de un conjunto de datos relacionado a la oferta de apartamentos para alquiler en la ciudad de Medellín"/>
+		<meta name="twitter:card" content="summary"/>
+		<meta name="twitter:url" content="http://ruedakax.github.io/renta_medellin.html"/>
+		<meta name="twitter:title" content="amouth - Arrendamientos en Medellin"/>
+		<meta name="twitter:description" content="Análisis exploratorio de un conjunto de datos relacionado a la oferta de apartamentos para alquiler en la ciudad de Medellín"/>
+		<meta name="twitter:image" content="/images/open_data.png"/>		
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<script src="https://d3js.org/d3.v3.min.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+	</head>
+	<body>
+		<!-- Header -->
+			<header id="header">
+				<h1>Arrendamientos en Medellín</h1>				
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Inicio</a></li>
+						<li><a href="datos/oferta_aptos.zip">Descarga</a></li>
+						<!--li><a href="generic.html">Generic</a></li>
+						<li><a href="elements.html">Elements</a></li>
+						<li><a href="#" class="button special">Sign Up</a></li-->
+					</ul>
+				</nav>
+			</header>
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="container">
+					<header class="major">					 
+					 <p>An&aacute;lisis exploratorio de un conjunto de datos relacionado a la oferta de apartamentos para alquiler en la ciudad de Medell&iacute;n</p>
+					</header>					
+					<p>Usando t&eacute;cnicas de Web Scrapping se obtuvieron los datos b&aacute;sicos (zona, lugar, área y precio) de los apartamentos en alquiler que ofrecen varios portales de inmobiliarias en la ciudad de Medellin. Los datos obedecen al estado de la oferta, para el día 21 de enero de 2019, representada por una muestra de <strong>14.485</strong> registros.</p>
+					<section>
+						<div class="row">
+							<div class="8u(medium) 11u$(small)" id="p1">	
+								<h4>¿Cómo se distribuyeron las ofertas para cada zona?</h4>
+								<img src="images/mde/freq_zona.png"/>
+							</div>
+						</div>
+						<div class="row">
+							<div class="8u(medium) 11u$(small)" id="p2">	
+								<h4>¿Cuál es la distribución de ofertas por lugares para cada zona?</h4>
+								<div class="pseu_row"><img src="images/mde/freq_lug_centro.png"/></div>
+								<div class="pseu_row"><img src="images/mde/frq_poblado.png"/></div>
+								<div class="pseu_row"><img src="images/mde/freq_norocc.png"/></div>
+								<div class="pseu_row"><img src="images/mde/freq_surocc.png"/> <p>Interesante observar en este gráfico la saturación de la oferta que existe en la Loma de los Bernal</p></div>
+							</div>
+						</div>						
+						<div class="row">
+							<div class="8u(medium) 11u$(small)" id="p2">	
+								<h4>¿Cuál es la media, el máximo y mínimo respecto al área (m<sup>2</sup>) de las ofertas por zona?</h4>
+								<img src="images/mde/summ_zona.png"/>
+							</div>							
+						</div>
+						<div class="row">
+							<div class="8u(medium)" id="p2">	
+							 <h4>¿Cuál es el comportamiento de la relación entre el <i>precio del m<sup>2</sup></i>  y el <i>área</i> de las ofertas por zona?</h4>
+								<p>Observando las gráficas producidas se nota un comportamiento similar para todas las zonas. Este muestra que la oferta suele iniciar con un alto costo del metro cuadrado, sin embargo a medida que el área aumenta, el precio del m<sup>2</sup> entra en un estado de estabilización, cuyo rango es particular para cada zona</p>									
+								<img src="images/mde/facets_p_a.png"/>
+								<p>En una vista general de los datos en la relación de <i>Area</i> Vs <i>Precio del m<sup>2</sup></i> tenemos: </p>									
+								<img src="images/mde/dispersion.png"/>
+							</div>	
+						</div>
+						<div class="row">
+							<div class="8u(medium) 11u$(small)" id="p2">								
+								<h4>¿Cualés serían los rangos de área y precio en los que se mueve el grueso de la oferta?</h4>
+								<p>Queda claro que respecto al área el mayor número de los apartamentos ofrecidos se caracterizan por tener un area entre 60 y 90 m<sup>2</sup>. Mientras que respecto al precio los rangos entre $500.000 - $1'500.000 tienen mayor representación en el total de la oferta</p>	
+								<div class="pseu_row"><img src="images/mde/hist_area.png"/></div>
+								<div class="pseu_row"><img src="images/mde/hist_precio.png"/></div>
+							</div>							
+						</div>
+						<div class="row">
+							<div class="8u(medium) 11u$(small)" id="p2">	
+								<h4>¿Cómo se ve la oferta respecto a la relación <i>Area</i> Vs <i>Precio del m<sup>2</sup></i>?</h4>
+								<img src="images/mde/hex_area_pre.png"/>
+							</div>							
+						</div>
+					</section>				
+				</div>			
+			</section>			
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">					
+					<div class="row">
+						<div class="8u 12u$(medium)">
+							<ul class="copyright">
+								<li>(amouth)&nbsp;:&nbsp;<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional</a></li>
+								<li>design&nbsp;:&nbsp;<a href="http://templated.co">templated</a></li>								
+							</ul>
+						</div>
+						<div class="4u$ 12u$(medium)">
+							<ul class="icons">								
+								<li>
+									<a class="icon rounded fa-linkedin" href="https://www.linkedin.com/in/amouth" target="_blank"><span class="label">LinkedIn</span></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-62756510-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	</body>
+</html>

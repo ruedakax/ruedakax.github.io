@@ -10,6 +10,8 @@
 
 /* Basic */
 
+	
+
 	body {
 		background: #fff;
 	}
@@ -82,6 +84,7 @@
 	h4 {
 		font-size: 1.1em;
 		line-height: 1.5em;
+		margin-top: 1.1em;
 	}
 
 	h5 {
@@ -1344,6 +1347,15 @@ path {
   margin: -1px 0 0 0;
   top: 100%;
   left: 0;
+}
+
+.pseu_row {
+    margin: 6px 0 -1px -2em;
+}
+
+.pseu_row {
+    border-bottom: solid 1px;
+	border-color: #8080803d	;
 }
 
 
