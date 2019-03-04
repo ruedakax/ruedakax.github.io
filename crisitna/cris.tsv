@@ -1,0 +1,300 @@
+id	Objeto	Tipo	Color	Uso	Recuerdo 	Propietario	Origen	Lugar	Anno	Conexion	Extension	 
+1	Cama 	Cama	Blanco	Diario	Fue mi primera compra viviendo sola	Cristina	Compra	La Polar	s/f	No	No
+2	Almohada 1	Cama	Beige	Diario	Fue mi primera compra viviendo sola	Cristina	Compa	La Polar	s/f	No	No
+3	Almohada 2	Cama	B/N	Diario	Fue la primera almohada que compró en su vida	Mauricio	Compra	No recuerdo	2015	No	No
+4	Tendido	Cama	Blanco	Diario		Cristina	Compra	Home center	2014	No	No
+5	Cobija 1	Cama	Granate	Diario	La compré en carretera viniendo Necoclí a Medellín	Cristina	Compra	Carretera	2014	No	No
+6	Cobija2	Cama	Naranja	Diario		Mauricio	Regalo	Mamá	s/f	No	No
+7	Sobrecama	Cama	Beige	Diario		Mauricio	Compra	Multimarcas	s/f	No	No
+8	Mueble auxiliar	Mueble	Café	Diario	Se lo vendi, 2015. Lo compre en el remate de La Polar, 2013	Mauricio	Compra	La polar	2015	No	No
+9	Cortina	Protección	Beige	Diario		Mauricio	Compra		2012	No	No
+10	Sistema de sonido	Música	Negro	3 o más días		Mauricio	Compra	Bogotá	s/f	No	No
+11	Veladoras	Luz	Blanco	3 o más días		Cristina	Regalo	Bancolombia	2018	Si	No
+12	Falda rayas azul	Ropa	Azul claro	Poco frecuente	Fui a comprar unas arepas y compré una falda	Cristina	Compra	Éxito	2016	No	Si
+13	Falda rayas verde	Ropa	Verde claro	Muy poco frecuente	La compre para una inauguración en el MAMM	Cristina	Compra	Stop	2017	No	Si
+14	Flada flores verde	Ropa	Verde claro	Poco frecuente	Quede endeudada 3 meses por esta falda	Cristina	Compra	Tienda MAMM	2018	No	Si
+15	Falda flores roja	Ropa	Rojo claro	Muy poco frecuente		Cristina	Compra	Tennis	2013	Si	Si
+16	Falta ideogramas B/n	Ropa	B/N	Frecuente	La compre para una inauguración en el MAMM	Cristina	Compra	Laureles	2018	Si	Si
+17	Falda blanca	Ropa	Blanco	Casi nunca		Cristina	Compra	No recuerdo	s/f	No	Si
+18	Falda roja	Ropa	Rojo	Casi nunca		Cristina	Compra	Amiga	2018	No	Si
+19	Falda vinotinto	Ropa	Vinotinto	Casi nunca		Cristina	Compra	No recuerdo	s/f	No	Si
+20	Flada negra tubo	Ropa	Negro	Muy poco frecuente	La compre para una inauguración en el MAMM	Cristina	Compra	Amiga	s/f	No	Si
+21	Falda tejida	Ropa	Rojo claro	Frecuente		Cristina	Compra	Tennis	2014	No	Si
+22	Falda negra	Ropa	Negro	Poco frecuente		Cristina	Compra	No recuerdo	s/f	No	Si
+23	Vestido flores largo	Ropa	Rojo	Frecuente		Cristina	Compra	Amiga	2018	Si	Si
+24	Vestido rojo largo	Ropa	Rojo claro	Poco frecuente	Lo tuve puesto un día antes de terminar con un novio	Cristina	Compra	Tennis	2013	Si	Si
+25	Vestido cafe largo	Ropa	Cafe claro	Poco frecuente	Lo llevaba puesto cuando conocí a Mauricio	Cristina	Compra	Tennis	2014	No	Si
+26	Vestido azul cola	Ropa	Azul eléctico	Casi nunca	Me recuerda cuando termine con un novio previo a año nuevo	Cristina	Compra	Stradivarius	2018	No	Si
+27	Vestido azul corto	Ropa	Azul	Poco frecuente		Cristina	Compra	No recuerdo	s/f	No	Si
+28	Vestido elefantes	Ropa	Azul cielo	Casi nunca	Lo compre para una inauguración en el MAMM, 2016	Cristina	Compra	Laureles	2016	No	Si
+29	Vestido Tropical	Ropa	Verde tropical	Casi nunca		Cristina	Compra	Compañera	2017	Si	Si
+30	Vestido rayas B/N	Ropa	B/N	Casi nunca		Cristina	Compra	No recuerdo	s/f		Si
+31	Vestido rayas	Ropa	Naranja	Frecuente	Lo compre para una fiesta, 2018	Cristina	Compra	Color blue	2018	Si	Si
+32	Vestido flores corto	Ropa	Lila	Poco frecuente		Cristina	Compra	Laureles	2014	No	Si
+33	Vestido gris	Ropa	Gris claro	Poco frecuente		Cristina	Compra	Compañera	2017	No	Si
+34	Vestido vinotinto	Ropa	Vinotinto	Frecuente	Ese día esta muy triste	Cristina	Regalo	Compañera	2017	No	Si
+35	Vestido cuero	Ropa	Negro	Poco frecuente	Lo compré para una inauguración en el MAMM	Cristina	Compra	No recuerdo	2017	No	Si
+36	Vestido negro	Ropa	Negro	Casi nunca	Me lo prestó y luego me lo regalo la directora del MAMM, luego de una presentación de baile para los compañeros del Museo	Cristina	Regalo	Compañera	2017	Si	Si
+37	Vestido lana 	Ropa	Vinotinto	Muy poco frecuente	Lo compre para una inauguración en el MAMM, 2017	Cristina	Compra	Stradivarius	2017	No	Si
+38	Shork	Ropa	Azul cielo	Muy poco frecuente		Cristina	Compra	No recuerdo	s/f	No	Si
+39	Jean claro	Ropa	Azul claro	Poco frecuente		Cristina	Compra	No recuerdo	s/f	No	Si
+40	Jean nuevo	Ropa	Azul	Frecuente		Cristina	Compra	Stradivarius	2018	No	Si
+41	Jean rotos	Ropa	Azul	Frecuente		Cristina	Compra	La Polar	2014	No	Si
+42	Jean desteñido	Ropa	Azul cielo	Poco frecuente		Cristina	Compra	Tennis	s/f	No	Si
+43	Jean más claro	Ropa	Azul claro	Poco frecuente		Cristina	Compra	Punto blanco	s/f	No	Si
+44	Pantalon rojo	Ropa	Rojo claro	Poco frecuente		Cristina	Compra	Punto blanco	s/f	No	Si
+45	Pantalon cuadros	Ropa	Ocre	Frecuente		Cristina	Compra	Stradivarius	2018	No	Si
+46	Pantalon militar	Ropa	Verde Militar	Poco frecuente	Lo tenía puesto cuando me despedí de una de mis mejores amigas	Cristina	Compra	Punto blanco	s/f	Sí	Si
+47	Jean gris	Ropa	Gris	Frecuente		Cristina	Compra	Tennis	s/f	No	Si
+48	Pantalon B/N	Ropa	B/N	Muy poco frecuente		Cristina	Compra	No recuerdo	s/f	No	Si
+49	Pantalon negro	Ropa	Negro	Frecuente		Cristina	Compra	Stradivarius	2018	No	Si
+50	Pantalon cuero	Ropa	Negro	Frecuente		Cristina	Compra	Stradivarius	2018	No	Si
+51	Bufanda buhos	Accesorios	Cafe	Muy poco frecuente		Cristina	Compra	Lorica	2017	No	Si
+52	Bufanda rosa	Accesorios	Rosado	Muy poco frecuente		Cristina	Compra	Tennis	2013	No	Si
+53	Bufanda calaveras	Accesorios	Rojo	Poco frecuente		Cristina	Compra	Tennis	2013	No	Si
+54	Bufanda azul 	Accesorios	Azul	Casi nunca		Cristina	Compra	Tennis	2013	No	Si
+55	Bufanda tropical	Accesorios	Verde tropical	Casi nunca		Cristina	Compra	Tennis	2013	No	Si
+56	Pañoleta amarilla	Accesorios	Amarillo	Poco frecuente		Cristina	Compra	Tennis	2017	No	Si
+57	Pañoleta bruja	Accesorios	Purpura	Frecuente		Cristina	Compra	Tienda MAMM	2019	No	Si
+58	Pañoleta Niuna(-)	Accesorios	Morado	Frecuente		Cristina	Regalo	Argentina	2018	Si	Si
+59	Cuarzo 	Piedras	Blanco	Casi nunca	Me lo regalo una amiga cuando me pase la última vez a vivir sola 	Cristina	Regalo	Amiga	2018	No	No
+60	Cuarzo rosa	Piedras	Rosa palido	Diario	Me lo regalo una amiga cuando me pase la última vez a vivir sola 	Mauricio	Regalo	Desconocido	2018	No	No
+61	Turmalina	Piedras	Negro	Poco frecuente		Cristina	Regalo	México	2018	No	No
+62	Amatista	Piedras	Lila	Diario		Cristina	Regalo	Amiga	2018	No	No
+63	Piedra negra	Piedras	Negro	Poco frecuente		Cristina	Regalo	México	2018	No	No
+64	Piedra blanca	Piedras	Blanco	Poco frecuente		Mauricio	Encuentro	Calle	s/f	No	No
+65	Caracol rosa	Piedras	Blanco	Muy poco frecuente		Mauricio	Encuentro	Mucurá	2017	No	No
+66	Caracol	Piedras	Blanco	Muy poco frecuente		Mauricio	Encuentro	Mucurá	2017	No	No
+67	Colchoneta verde	Yoga	Verde tropical	2 o más días		Cristina	Compra	Atman yoga	2018	No	No
+68	Colchoneta roja	Yoga	Rojo	2 o más días	Se lo regale cuándo inicio clases de yoga en 2018	Mauricio	Compra	Éxito	2007	No	No
+69	Buso lana gris	Ropa	Gris claro	Poco frecuente		Cristina	Compra	Stradivarius	2018	No	Si
+70	Buso gris	Ropa	Gris claro	Poco frecuente		Cristina	Compra	Stradivarius	2018	No	Si
+71	Buso gris naranja	Ropa	Naranja	Muy poco frecuente		Cristina	Compra	Compañera	2017	No	Si
+72	Buso morada	Ropa	Fucsia	Muy poco frecuente		Cristina	Compra	Stradivarius	2017	No	Si
+73	Buso rojo	Ropa	Rojo	Frecuente	Lo estrene para pasar año nuevo con Mauricio en Santa Elena 	Cristina	Compra	Stradivarius	2018	Si	Si
+74	Sudadera negra	Ropa	Negro	Frecuente		Cristina	Compra	Tania	s/f	No	Si
+75	Lycra naranja	Ropa	Naranja	Poco frecuente		Cristina	Compra	Tania	s/f	No	Si
+76	Lycra amarillo	Ropa	Amarillo	Poco frecuente		Cristina	Compra	Tania	s/f	No	Si
+77	Lycra morado	Ropa	Purpura	Casi nunca		Cristina	Compra	Éxito	2017	No	Si
+78	Shork deportivo	Ropa	Verde tropical	Casi nunca		Cristina	Compra	Éxito	2017	No	Si
+79	Camisilla morada 	Ropa	Purpura	Poco frecuente		Cristina	Compra	No recuerdo	2017	No	Si
+80	Camisilla negra	Ropa	Negro	Poco frecuente		Cristina	Compra	Éxito	s/f	No	Si
+81	Camisilla lila 	Ropa	Lila	Poco frecuente		Cristina	Compra	Éxito	2017	No	Si
+82	Camisa astros	Pijama	Negro	Frecuente	Me la regaló Mauricio de un viaje a Bogotá	Cristina	Regalo	Bogotá	2018	No	Si
+83	Camisa medellin	Pijama	Blanco	Frecuente		Cristina	Compra	Tienda MAMM	s/f	No	Si
+84	Buso gatos	Pijama	Blanco	Frecuente		Cristina	Compra	No recuerdo	s/f	No	Si
+85	Pantaloncito	Pijama	Azul claro	Frecuente		Cristina	Compra	No recuerdo	s/f	No	Si
+86	Pantalon verde	Pijama	Verde Militar	Frecuente		Cristina	Compra	Tennis	s/f	No	Si
+87	Pantalon beige	Pijama	Beige	Muy poco frecuente		Cristina	Compra	Punto blanco	s/f	No	Si
+88	Buso negro	Ropa	Negro	Frecuente		Cristina	Compra	Stradivarius	2018	No	Si
+89	Buso verde	Ropa	Verde Militar	Frecuente		Cristina	Compra	Stradivarius	2018	No	Si
+90	Camisa 2 piñas	Ropa	Naranja	Frecuente		Cristina	Compra	MAMM	2018	No	Si
+91	Camisa 1 piña	Ropa	Blanco	Frecuente		Cristina	Compra	Tennis	s/f	Si	Si
+92	Camisa frutas	Ropa	Naranja	Frecuente		Cristina	Compra	Laureles	2019	No	Si
+93	Camisa rayas rojas	Ropa	Rojo	Frecuente		Cristina	Compra	Laureles	2019	No	Si
+94	Camisa rayas b/n	Ropa	B/N	Poco frecuente		Cristina	Compra	No recuerdo	s/f	No	Si
+95	C. rayas amarilla	Ropa	Ocre	Poco frecuente		Cristina	Compra	Zara	2018	No	Si
+96	C. rayas gris	Ropa	Gris	Muy poco frecuente		Cristina	Compra	Barrio	2018	No	Si
+97	Camison morado	Ropa	Purpura	Muy poco frecuente		Cristina	Compra	Compañera	2018	No	Si
+98	Camison azul	Ropa	Azul oscuro	Poco frecuente		Cristina	Compra	Compañera	2017	No	Si
+99	C. boton larga	Ropa	Negro	Poco frecuente		Cristina	Compra	No recuerdo	s/f	No	Si
+100	C. boton corta	Ropa	Negro	Muy poco frecuente		Cristina	Compra	No recuerdo	s/f	No	Si
+101	C. boton blanca	Ropa	Blanco	Casi nunca		Cristina	Compra	No recuerdo	2017	No	Si
+102	C. transparencia	Ropa	Negro	Casi nunca		Cristina	Compra	Laureles	2017	No	Si
+103	C. conejos - manos	Ropa	Gris	Casi nunca		Cristina	Regalo	Parque Explora	s/f	No	Si
+104	C. ballena	Ropa	Blanco	Muy poco frecuente	Sueño mucho con ballenas	Cristina	Compra	No recuerdo	s/f	No	Si
+105	C. pajaros	Ropa	Gris claro	Poco frecuente		Cristina	Compra	Tennis	s/f	No	Si
+106	C. jaguares	Ropa	Gris	Frecuente		Cristina	Compra	No recuerdo	s/f	No	Si
+107	C. jaguar ojos	Ropa	Negro	Poco frecuente		Cristina	Compra	No recuerdo	s/f	No	Si
+108	C. tigre 	Ropa	Verdeazul	Frecuente		Cristina	Compra	Tennis	s/f	No	Si
+109	C. buho ojos	Ropa	Negro	Poco frecuente		Cristina	Compra	No recuerdo	s/f	No	Si
+110	Camisa flores	Ropa	Rosa fuerte	Frecuente	Siempre que me la pongo me toman fotos	Cristina	Compra	Stradivarius	2017	Si	Si
+111	Camisilla piel roja	Ropa	Rojo	Muy poco frecuente	La compré en el centro, en frente de Versalles	Cristina	Compra	Centro	s/f	No	Si
+112	Camiseta teta	Ropa	Blanco	Frecuente		Cristina	Compra	MAMM	2018	Si	Si
+113	Camiseta MAMM	Ropa	Gris	Casi nunca	Es la camiseta de la celebración de los 40 años del museo	Cristina	Regalo	MAMM	2018	Si	Si
+114	Correa verde	Accesorios	Verde Militar	Frecuente		Cristina	Compra	Stradivarius	2017	No	Si
+115	Correa amarilla	Accesorios	Amarillo	Frecuente		Cristina	Compra	Stradivarius	2018	No	Si
+116	Correa rosa	Accesorios	Rosado	Casi nunca		Cristina	Compra	No recuerdo	s/f	No	Si
+117	Correa animal print	Accesorios	Beige	Poco frecuente		Cristina	Regalo	Sobrina	s/f	No	Si
+118	Correa negra	Accesorios	Negro	Casi nunca		Cristina	Regalo	Sobrina	s/f	No	Si
+119	Correa cocodillo	Accesorios	Café	Poco frecuente		Cristina	Compra	Tennis	s/f	No	Si
+120	Buso rayas b/n	Ropa	B/N	Frecuente		Cristina	Compra	Tennis	s/f	No	Si
+121	Camison rayas azul	Ropa	Azul claro	Frecuente		Cristina	Compra	Zara	2018	No	Si
+122	Camison Flores verdes	Ropa	Verde claro	Frecuente		Cristina	Compra	Fuera de loco	2018	No	Si
+123	Camison Flores 	Ropa	Rojo claro	Frecuente		Cristina	Compra	Stradivarius	2017	No	Si
+124	Camisa floral verde	Ropa	Verde	Frecuente		Cristina	Compra	Color blue	2018	No	Si
+125	Camiseta amarilla	Ropa	Amarillo	Poco frecuente		Cristina	Compra	Color blue	2018	No	Si
+126	Básica rayas b/n	Ropa	B/N	Frecuente		Cristina	Compra	Berska	2017	No	Si
+127	Básica verde militar	Ropa	Verde Militar	Frecuente		Cristina	Compra	No recuerdo	2017	No	Si
+128	Básica negra	Ropa	Negro	Frecuente		Cristina	Compra	Berska	2017	No	Si
+129	Camiseta Pitaya	Ropa	Naranja	Frecuente		Cristina	Compra	Laureles	2018	No	Si
+130	Camiseta MAMM negra	Ropa	Negro	Poco frecuente		Cristina	Compra	Tienda MAMM	2018	No	Si
+131	C. Cuarenta MAMM	Ropa	Blanco	Poco frecuente	Es la camiseta de la celebración de los 40 años del museo	Cristina	Compra	Tienda MAMM	2018	No	Si
+132	Bluson parajos azul	Ropa	Azul rey	Frecuente		Cristina	Compra	Tennis	s/f	No	Si
+133	C. cactus	Ropa	Verde Militar	Frecuente		Cristina	Compra	No recuerdo	s/f	No	Si
+134	C. animal print	Ropa	Verde claro	Muy poco frecuente		Cristina	Compra	No recuerdo	s/f	No	Si
+135	C. flores fucsia	Ropa	Fuscia	Poco frecuente		Cristina	Compra	No recuerdo	s/f	No	Si
+136	Camison rayas azul	Ropa	Azul claro	Casi nunca		Cristina	Compra	Compañera	s/f	No	Si
+137	Buso lana vinotinto	Ropa	Vinotinto	Frecuente		Cristina	Compra	Forever 21	s/f	No	Si
+138	Chaqueta beige	Ropa	Beige	Frecuente		Cristina	Compra	Stradivarius	2018	No	Si
+139	Impermeable limon	Ropa	Verde tropical	Poco frecuente	Lo compré para entregar obras de arte en Bogotá	Cristina	Compra	MAMM	2017	Si	Si
+140	Impermeable azul	Ropa	Azul eléctico	Poco frecuente		Cristina	Compra	No recuerdo	s/f	No	Si
+141	impermeable negro 	Ropa	Negro	Muy poco frecuente		Cristina	Compra	No recuerdo	s/f	No	Si
+142	Cartuchera buho	Maquillaje	Lila	Diario		Cristina	Compra	Sobrina	s/f	No	Si
+143	Sombras ojos	Maquillaje	Rojo claro	Muy poco frecuente		Cristina	Compra	No recuerdo	s/f	No	Si
+144	Sombras cejas	Maquillaje	Café oscuro	Diario		Cristina	Compra	Éxito	2019	No	Si
+145	Rubor	Maquillaje	Rosado	Diario		Cristina	Compra	Éxito	2019	No	Si
+146	Base	Maquillaje	Beige	Diario		Cristina	Compra	Éxito	2019	No	Si
+147	Rubor dorado	Maquillaje	Ocre	Diario		Cristina	Compra	Éxito	2019	No	Si
+148	Lapiz ojos nuevo	Maquillaje	Negro	Diario		Cristina	Compra	Éxito	2019	No	Si
+149	Lapiz ojos viejo	Maquillaje	Negro	Diario		Cristina	Compra	Éxito	2018	No	Si
+150	Cuchilla 	Maquillaje	Rojo	2 o más días		Cristina	Compra	Barrio	2018	No	Si
+151	Desodorante 	Aseo	Morado eléctrico	Diario		Cristina	Compra	Barrio	2018	No	Si
+152	Labial vinotinto	Maquillaje	Vinotinto	Poco frecuente		Cristina	Compra	No recuerdo	2017	No	Si
+153	Labial rosa	Maquillaje	Rosado	Poco frecuente		Cristina	Compra	Falabella	2017	No	Si
+154	Labial rojo	Maquillaje	Rojo	Poco frecuente		Cristina	Compra	Compañera	2018	No	Si
+155	Labial dorado	Maquillaje	Ocre	3 o más días		Cristina	Compra	Compañera	2018	No	Si
+156	Labial rosa claro	Maquillaje	Rosado	3 o más días		Cristina	Compra	Falabella	2017	No	Si
+157	Pincel sombras	Maquillaje	Café oscuro	Muy poco frecuente		Cristina	Compra	No recuerdo	s/f	No	Si
+158	Pincel cejas	Maquillaje	Café	Diario		Cristina	Compra	No recuerdo	s/f	No	Si
+159	Brocha rubor	Maquillaje	Rosado	Diario		Cristina	Compra	No recuerdo	s/f	No	Si
+160	Brillo	Maquillaje	Rosa palido	Diario		Cristina	Compra	Bogotá	2019	No	Si
+161	Esmalte rojo mate	Maquillaje	Rojo	Poco frecuente		Cristina	Compra	Éxito	2018	No	Si
+162	Esmalte rojo	Maquillaje	Rojo	Poco frecuente		Cristina	Compra	Bogotá	2019	No	Si
+163	Crema aguacate	Maquillaje	Blanco	Diario		Ambos	Compra	Compañera	2019	No	Si
+164	Bolso verde	Guarda-cosas	Verde claro	Muy poco frecuente		Cristina	Compra	No recuerdo	s/f	No	Si
+165	Caja celular	Celular	Verde tropical	Casi nunca		Cristina	Compra	Éxito	2018	No	Si
+166	Copitos	Aseo	Blanco	Frecuente		Ambos	Compra	Barrio	2018	No	Si
+167	Polvo 	Maquillaje	Beige	Poco frecuente		Cristina	Compra	Éxito	2018	No	Si
+168	Caimanes negros	Accesorios	Negro	Casi nunca		Cristina	Compra	No recuerdo	s/f	No	Si
+169	Parche	Accesorios	Rojo claro	Casi nunca		Cristina	Compra	Centro	2018	No	Si
+170	Labial morado	Maquillaje	Purpura	Casi nunca	Lo compré para un disfraz	Cristina	Compra	Barrio	2018	Si	Si
+171	Labial fucsia	Maquillaje	Fucsia	Casi nunca		Cristina	Regalo	Compañera	s/f	No	Si
+172	HIlo negro	Ropa	Negro	Casi nunca		Ambos	Compra	Barrio	2018	No	Si
+173	Hilo blanco	Ropa	Blanco	Casi nunca		Ambos	Compra	Barrio	2019	No	Si
+174	Pomitos para uñas	Aseo	Blanco	Poco frecuente		Cristina	Compra	Barrio	2019	No	Si
+175	Esmalte morado	Maquillaje	Purpura	Casi nunca		Cristina	Compra	Barrio	2019	No	Si
+176	Esmalte transparente	Maquillaje	Blanco	Casi nunca		Cristina	Compra	Barrio	2018	No	Si
+177	Pinza uñas	Maquillaje	Negro	Casi nunca		Cristina	Compra	No recuerdo	s/f	No	Si
+178	Gafas negras	Accesorios	Negro	Casi nunca	Regalo de amigo secreto	Cristina	Regalo	Compañero	2017	No	Si
+179	Protectores	Aseo	Rosa palido	Poco frecuente		Cristina	Compra	Barrio	2019	No	Si
+180	Estuche cepillo	Aseo	Naranja	Diario		Cristina	Compra	No recuerdo	s/f	No	Si
+181	Cepillo de dientes 	Aseo	Naranja claro	Diario		Cristina	Compra	Barrio	2018	No	Si
+182	Desodorante 2	Aseo	Morado eléctrico	Diario		Cristina	Compra	Barrio	2018	No	Si
+183	Mascarilla pepino	Maquillaje	Verde claro	Poco frecuente		Cristina	Compra	No recuerdo	s/f	No	Si
+184	Spray manzana	Maquillaje	Aguamarina	Casi nunca		Cristina	Compra	No recuerdo	s/f	No	Si
+185	Lima uñas 	Aseo	Azul	Casi nunca		Cristina	Compra	No recuerdo	s/f	No	Si
+186	Lima uñas grande	Aseo	Gris claro	Casi nunca		Cristina	Compra	No recuerdo	s/f	No	Si
+187	Chulo verde	Accesorios	Verde claro	Casi nunca	Lo olvidó Guadalupe	Cristina	Olvidó	No recuerdo	s/f	No	Si
+188	Chulo animal print	Accesorios	Café	Casi nunca	Lo olvidó Guadalupe	Cristina	Olvidó	No recuerdo	s/f	No	Si
+189	Pinza negra	Accesorios	Negro	Casi nunca		Cristina	Compra	No recuerdo	s/f	No	Si
+190	Ganchos pelo	Accesorios	Negro	Casi nunca		Cristina	Compra	No recuerdo	s/f	No	Si
+191	Pinza documentos	Cosa	Negro	Casi nunca		Cristina	Compra	No recuerdo	s/f	No	Si
+192	Botón estrellas 	Accesorios	Blanco	Casi nunca		Cristina	Compra	Amiga	2018	No	Si
+193	Botón tetas	Accesorios	Beige	Casi nunca		Cristina	Compra	Amiga	2018	No	Si
+194	Tarot Marcella	Tarot	Ocre	Muy poco frecuente		Cristina	Compra	Exlibris	2014	No	No
+195	Tarot ilustrado	Tarot	Blanco	Muy poco frecuente	Regalo de amigo secreto	Cristina	Regalo	Compañero	2017	No	No
+196	Tarot Viscoti Sforza	Tarot	Ocre	Poco frecuente		Cristina	Compra	Bogotá	2019	No	No
+197	Tarot estrellas del pop	Tarot	Naranja	Muy poco frecuente		Cristina	Compra	Feria del libro	2018	No	No
+198	Tarot Rider Waite	Tarot	Morado	Diario		Cristina	Compra	Unicentro	2018	No	No
+199	Aretes verdes	Accesorios	Verde claro	Poco frecuente		Cristina	Compra	Laureles	2017	No	Si
+200	Aretes rojos	Accesorios	Rojo	Frecuente		Cristina	Compra	Compañera	2019	No	Si
+201	Aretes cactus	Accesorios	Ocre	Frecuente		Cristina	Compra	Laureles	2019	No	Si
+202	Aretes aros	Accesorios	Ocre	Frecuente		Cristina	Compra	Laureles	2018	No	Si
+203	Aretes aros dobles	Accesorios	Ocre	Muy poco frecuente		Cristina	Compra	Laureles	2019	No	Si
+204	Aretes hojas	Accesorios	Ocre	Muy poco frecuente		Cristina	Compra	No recuerdo	2018	No	Si
+205	Dije pimentón	Accesorios	Rojo	Casi nunca		Cristina	Regalo	Compañera	2018	No	Si
+206	Caja aretes	Accesorios	Café	Diario		Cristina	Compra	Compañera	2019	No	Si
+207	Medias 	Ropa	Blanco	Diario		Cristina	Compra	Varios	f/v	No	Si
+208	Calzones y tangas	Ropa	Blanco	Diario		Cristina	Compra	Varios	f/v	No	Si
+209	Brasieres	Ropa	Blanco	Diario		Cristina	Compra	Varios	f/v	No	Si
+210	Vestido de baño	Ropa	Naranja claro	Muy poco frecuente		Cristina	Compra	Leonisa	s/f	No	Si
+211	Medias leggins 	Ropa	Negro	Poco frecuente		Cristina	Compra	Éxito	2018	No	Si
+212	Tenis morados	Zapatos	Purpura	Muy poco frecuente		Cristina	Compra	No recuerdo	2013	No	Si
+213	Tenis naranjas	Zapatos	Naranja	Frecuente		Cristina	Compra	Flamingo	2018	No	Si
+214	Tenis rojos	Zapatos	Rojo	Poco frecuente		Cristina	Compra	Sobrina	2017	No	Si
+215	Tenis beiges	Zapatos	Beige	Frecuente		Cristina	Compra	Flamingo	2018	No	Si
+216	Tenis tejidos	Zapatos	Café	Muy poco frecuente		Cristina	Compra	Santander	2017	No	Si
+217	Botas altas	Zapatos	Negro	Muy poco frecuente		Cristina	Compra	No recuerdo	2014	No	Si
+218	Botas bruja	Zapatos	Negro	Frecuente		Cristina	Compra	Zara	2018	No	Si
+219	Botas negras 	Zapatos	Negro	Frecuente		Cristina	Compra	Cosmos	s/f	No	Si
+220	Botines 	Zapatos	Negro	Frecuente		Cristina	Compra	Cosmos	s/f	No	Si
+221	Chanclas altas	Zapatos	Negro	Muy poco frecuente		Cristina	Compra	Bata	2018	No	Si
+222	Botas taches	Zapatos	Negro	Frecuente		Cristina	Compra	Manizales	2018	No	Si
+223	C. azul oscura	Ropa	Azul oscuro	Frecuente		Mauricio	Compra	Zara	2017	No	No
+224	C. azul compartida	Ropa	Azul claro	Muy poco frecuente	Cuando nos viviamos juntos y amanecía en su casa, usaba esta camisa para ir a trabajar	Mauricio	Compra	Zara	s/f	Si	No
+225	C. azul lunares	Ropa	Azul	Frecuente		Mauricio	Compra	Zara	2018	No	No
+226	C. azul parches	Ropa	Azul cielo	Frecuente		Mauricio	Compra	Zara	2018	No	No
+227	C. azul 	Ropa	Azul cielo	Frecuente		Mauricio	Compra	Zara	2018	No	No
+228	C. azul hojas	Ropa	Azul	Muy poco frecuente		Mauricio	Compra	Zara	2017	No	No
+229	C. azul tropical 	Ropa	Azul claro	Casi nunca		Mauricio	Compra	Fruta fresca	2015	No	No
+230	Buso negro	Ropa	Negro	Frecuente		Mauricio	Compra	Bogotá	2019	No	No
+231	Buso verde	Ropa	Verde claro	Casi nunca		Mauricio	Compra	No recuerdo	s/f	No	No
+232	Chaqueta cuero	Ropa	Café	Muy poco frecuente		Mauricio	Compra	Bogotá	s/f	No	No
+233	Chaqueta verde	Ropa	Verde Militar	Muy poco frecuente		Mauricio	Compra	No recuerdo	s/f	No	No
+234	Blaizer negro nuevo	Ropa	Negro	Casi nunca	Lo compró para una fiesta pero se quebró la muñeca días antes, aun no lo estrena	Mauricio	Compra	Zara	2018	No	No
+235	C. renos	Ropa	Beige	Frecuente		Mauricio	Compra	Falabella	2017	No	No
+236	C. piñas	Ropa	Ocre	Poco frecuente	Regalo de cumpleaños	Mauricio	Regalo	Berska	2017	No	No
+237	C. ilustraciones	Ropa	Blanco	Frecuente		Mauricio	Compra	Zara	2018	No	No
+238	Camisa verde militar	Ropa	Verde Militar	Frecuente		Mauricio	Compra	Zara	2018	No	No
+239	Camisa verde	Ropa	Verde claro	Frecuente		Mauricio	Compra	Zara	2018	No	No
+240	Camisa gris	Ropa	Gris claro	Frecuente		Mauricio	Compra	México	2018	No	No
+241	Camisa rosa	Ropa	Rosado	Frecuente		Mauricio	Compra	México	2018	No	No
+242	Camisa vinotinto	Ropa	Vinotinto	Poco frecuente		Mauricio	Compra	Falabella	2017	No	No
+243	Jean gris claro	Ropa	Gris claro	Casi nunca		Mauricio	Compra	Zara	s/f	No	No
+244	Pantalon negro negro	Ropa	Negro	Frecuente		Mauricio	Compra	Zara	2018	No	No
+245	Jean	Ropa	Azul oscuro	Frecuente		Mauricio	Compra	Zara	2018	No	No
+246	Pantalon crema 	Ropa	Beige	Frecuente		Mauricio	Compra	Falabella	2018	No	No
+247	Pantalon beige claro	Ropa	Beige	Frecuente		Mauricio	Compra	Zara	2018	No	No
+248	Pantalon beige oscuro	Ropa	Ocre	Frecuente		Mauricio	Compra	Zara	2017	No	No
+249	Pantalon gris tela	Ropa	Gris	Poco frecuente		Mauricio	Compra	Zara	2017	No	No
+250	Pantalon azul 	Ropa	Azul	Frecuente		Mauricio	Compra	Zara	2018	No	No
+251	Tenis N. azul oscuro	Zapatos	Azul oscuro	Frecuente	Es un regalo de su hermana	Mauricio	Regalo	México	2018	No	No
+252	Tenis N. azul verde	Zapatos	Turquesa	Muy poco frecuente	Es un regalo de su hermana	Mauricio	Regalo	Unicentro	2015	No	No
+253	Tenis N. negros	Zapatos	Negro	Frecuente	Es un regalo de su hermana	Mauricio	Regalo	Agaval 	2018	No	No
+254	Tenis N verde claro	Zapatos	Verde claro	Frecuente	Es un regalo de su hermana	Mauricio	Regalo	México	2017	No	No
+255	Tenis N. vinotinto azul	Zapatos	Vinotinto	Poco frecuente	Regalo de cumpleaños	Mauricio	Regalo	Agaval 	2016	No	No
+256	Zapatos negros	Zapatos	Negro	Casi nunca		Mauricio	Compra	Zara	2015	No	No
+257	Zapatos azul cuero	Zapatos	Verde Militar	Casi nunca		Mauricio	Compra	Bosi	2015	No	No
+258	Tenis aguamarina 	Zapatos	Turquesa	Casi nunca		Mauricio	Compra	Fuera de loco	2015	No	No
+259	Chanclas 	Zapatos	Negro	Diario	Las compró en Bogotá porque se le hinchó el pie luego de doblarse el tobillo	Mauricio	Compra	Bogotá	2017	No	No
+260	Carpa 	Paseo	Verde Militar	Casi nunca	La estrenamos en Palomino, fue la primera vez que acampaba	Mauricio	Compra	Home center	2016	No	No
+261	Piano Guadalupe	HIja Mauricio	Naranja	Casi nunca	Fue el regalo para Guadalupe en diciembre de 2017, no lo usó mucho. 	Guadalupe	Compra	Mercado libre	2017	No	No
+262	Colchon inflable 	Paseo	Verde Militar	Casi nunca		Mauricio	Compra	No recuerdo	s/f	No	No
+263	Bolsa calzoncillos 	Ropa	Azul eléctico	Diario		Mauricio	Compra	Varios	f/v	No	No
+264	Bolsa medias	Ropa	Gris	Diario		Mauricio	Compra	Varios	f/v	No	No
+265	Camisetas colores	Ropa	Varios colores	Frecuente		Mauricio	Compra	Varios	f/v	No	No
+266	Camisetas negras	Ropa	Negro	Frecuente		Mauricio	Compra	Varios	f/v	No	No
+267	Colección música	Música	Negro	Casi nunca		Mauricio	Compra	Varios	f/v	No	No
+268	Colección peliculas	Colección	Negro	Casi nunca		Mauricio	Compra	Varios	f/v	No	No
+269	Colección boletos	Colección	Vinotinto	Casi nunca		Mauricio	Recolección	Varios	f/v	No	No
+270	Gafas realidad aumentada	Accesorios	Blanco	Casi nunca	Se usaron en una exposición del MAMM	Mauricio	Regalo	MAMM	2016	No	No
+271	Rodillera	Accidente	Negro	Poco frecuente		Mauricio	Compra	No recuerdo	s/f	No	No
+272	Cabestrillo 	Accidente	Azul eléctico	Muy poco frecuente		Mauricio	Compra	Clínica	2018	No	No
+273	Muñequera	Accidente	Negro	Poco frecuente	Se quebró la muñeca 3 días después de vivir juntos. 	Mauricio	Compra	Monterrey	2019	No	No
+274	Gafas de sol 	Accesorios	Negro	Poco frecuente	Es un regalo de su hermana	Mauricio	Compra	México	2018	No	No
+275	Estuche gafas 	Accesorios	Negro	Poco frecuente	Es un regalo de su hermana	Mauricio	Compra	México	2018	No	No
+276	Loción 	Maquillaje	Azul eléctico	Diario		Mauricio	Compra	México	2018	No	No
+277	Maquina de afeitar	Aseo	Negro	2 o más días		Mauricio	Compra	Panamericana	2018	No	No
+278	Desodorante spray 	Aseo	Blanco	Diario		Mauricio	Compra	Barrio	2019	No	No
+279	Pantaloneta militar	Ropa	Verde Militar	Frecuente		Mauricio	Compra	Punto blanco	2018	No	No
+280	Pantaloneta flores	Ropa	Purpura	Frecuente		Mauricio	Compra	Punto blanco	2017	No	No
+281	Impermeable bici	Ropa	Gris claro	Casi nunca		Mauricio	Regalo	Manizales	s/f	No	No
+282	Sudaderas negras	Ropa	Negro	Poco frecuente		Mauricio	Compra	No recuerdo	s/f	No	No
+283	Pantaloneta de baño 	Ropa	Azul cielo	Muy poco frecuente		Mauricio	Compra	Speedo	s/f	No	No
+284	Sonido tamales 	Ruido	Blanco	2 o más días	"Y la masa, la masa es más rica que la carne"	Vecinos	Externo	Barrio	f/v	Si	Si
+285	Sonido helados	Ruido	Blanco	2 o más días	"Estamos pasando por este prestigoso sector ofreciendoles este rico y delicioso helado..."	Vecinos	Externo	Barrio	f/v	Si	Si
+286	Sonido bolsa de basura	Ruido	Blanco	2 o más días	"bolchita pa la basura... bolchita pa la basura"	Vecinos	Externo	Barrio	f/v	Si	Si
+287	Sonido perro piso 8	Ruido	Blanco	3 o más días		Vecinos	Externo	Barrio	f/v	No	Si
+288	Sonido tacones piso 8	Ruido	Blanco	3 o más días		Vecinos	Externo	Barrio	f/v	No	Si
+289	Olor para dormir 	Cama	Blanco	Diario		Mauricio	Regalo	México	f/v	No	Si
+290	Cuerpo Mauricio 	Cuerpo	Cafecito	Diario	Recuerdo para centimetro	Mauricio	Suegros	Manizales	1979	Si	Si
+291	Cuerpo Cristina	Cuerpo	Café	Diario	Recuerdo para centimetro	Cristina	Papás	Medellín	1987	No	Si
+292	Árbol 	Paisaje 	Verde Militar	Diario		Todos	Externo	Barrio	s/f	Si	Si
+293	Edificios vecinos	Paisaje 	Naranja claro	Diario		Vecinos	Externo	Barrio	s/f	Si	Si
+294	Puerta entrada 	Casa	Café oscuro	Diario	La puerta rozaba el piso y era muy dificil de cerrar. Tuvimos que cortarla	Mauricio	Compra	Casa	2014	No	No
+295	Marca en el piso - puerta	Casa	Gris claro	Diario		Ambos	Accidente	Casa	2016	No	No
+296	Viento	Sonido	Blanco	Frecuente		Todos	Externo	Barrio	f/v	No	Si
+297	Puerta - baño	Casa	Café oscuro	Diario		Mauricio	Compra	Casa	2014	No	No
+298	Closet Mauricio	Casa	Café oscuro	Frecuente		Mauricio	Compra	Casa	2014	No	No
+299	Closet Cristina	Casa	Café oscuro	Diario	Mi closet está en otra habitación	Cristina	Compra	Casa	2014	No	Si
