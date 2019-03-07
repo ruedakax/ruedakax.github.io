@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <body>
-<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/d3.v5.min.js"></script>
 <script>
-data = d3.json("https://raw.githubusercontent.com/ruedakax/ruedakax.github.io/master/crisitna/final.json")
+//d3 = require("d3@5");
+
+data = d3.json("https://raw.githubusercontent.com/ruedakax/ruedakax.github.io/master/crisitna/final.json");
 
 partition = data => {
   const root = d3.hierarchy(data)
@@ -12,7 +14,7 @@ partition = data => {
   return d3.partition()
       .size([2 * Math.PI, root.height + 1])
     (root);
-}
+};
 color = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, data.children.length + 1));
 format = d3.format(",d");
 width = 932;
