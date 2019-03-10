@@ -36,7 +36,7 @@
 				.size([2 * Math.PI, root.height + 1])
 				(root);            
 			};
-			color = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, data.children.length + 5));        
+			color = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, 5));        
 			//console.log(data.children);
 		});
 		
