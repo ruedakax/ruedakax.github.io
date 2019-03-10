@@ -13,25 +13,34 @@
         var width = 932;
         var radius = width / 6;
 		var data = "";
-		setTimeout(data = d3.json("https://raw.githubusercontent.com/ruedakax/ruedakax.github.io/master/crisitna/final.json"), 3000);    
-        var arc = d3.arc()
-        .startAngle(d => d.x0)
-        .endAngle(d => d.x1)
-        .padAngle(d => Math.min((d.x1 - d.x0) / 2, 0.005))
-        .padRadius(radius * 1.5)
-        .innerRadius(d => d.y0 * radius)
-        .outerRadius(d => Math.max(d.y0 * radius, d.y1 * radius - 1));
-        var format = d3.format(",d");
-        var partition = data => {
-            const root = d3.hierarchy(data)
-            .sum(d => d.value)
-            .sort((a, b) => b.value - a.value);
-            return d3.partition()
-            .size([2 * Math.PI, root.height + 1])
-            (root);            
-        };
-        color = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, data.children.length + 5));        
-        console.log(data.children);
+		let miPrimeraPromise = new Promise((resolve, reject) => {
+			data = d3.json("https://raw.githubusercontent.com/ruedakax/ruedakax.github.io/master/crisitna/final.json")
+		});
+
+		miPrimeraPromise.then((successMessage) => {
+			var arc = d3.arc()
+			.startAngle(d => d.x0)
+			.endAngle(d => d.x1)
+			.padAngle(d => Math.min((d.x1 - d.x0) / 2, 0.005))
+			.padRadius(radius * 1.5)
+			.innerRadius(d => d.y0 * radius)
+			.outerRadius(d => Math.max(d.y0 * radius, d.y1 * radius - 1));
+			var format = d3.format(",d");
+			var partition = data => {
+				const root = d3.hierarchy(data)
+				.sum(d => d.value)
+				.sort((a, b) => b.value - a.value);
+				return d3.partition()
+				.size([2 * Math.PI, root.height + 1])
+				(root);            
+			};
+			color = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, data.children.length + 5));        
+			//console.log(data.children);
+		});
+		
+		
+		
+        
     </script>
   </body>
 </html>
