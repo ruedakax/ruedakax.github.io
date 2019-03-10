@@ -10,18 +10,19 @@
         <div id="chart"></div>
     </div>        
     <script>
-        width = 932;
-        radius = width / 6;
-        data = d3.json("https://raw.githubusercontent.com/ruedakax/ruedakax.github.io/master/crisitna/final.json");        
-        arc = d3.arc()
+        var width = 932;
+        var radius = width / 6;
+		var data = "";
+		setTimeout(data = d3.json("https://raw.githubusercontent.com/ruedakax/ruedakax.github.io/master/crisitna/final.json"), 3000);    
+        var arc = d3.arc()
         .startAngle(d => d.x0)
         .endAngle(d => d.x1)
         .padAngle(d => Math.min((d.x1 - d.x0) / 2, 0.005))
         .padRadius(radius * 1.5)
         .innerRadius(d => d.y0 * radius)
         .outerRadius(d => Math.max(d.y0 * radius, d.y1 * radius - 1));
-        format = d3.format(",d");
-        partition = data => {
+        var format = d3.format(",d");
+        var partition = data => {
             const root = d3.hierarchy(data)
             .sum(d => d.value)
             .sort((a, b) => b.value - a.value);
@@ -29,8 +30,8 @@
             .size([2 * Math.PI, root.height + 1])
             (root);            
         };
-        //color = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, data.children.length + 5));        
-        console.log(data.children)
+        color = d3.scaleOrdinal(d3.quantize(d3.interpolateRainbow, data.children.length + 5));        
+        console.log(data.children);
     </script>
   </body>
 </html>
