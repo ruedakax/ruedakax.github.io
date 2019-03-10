@@ -14,10 +14,12 @@
         var radius = width / 6;
 		var data = "";
 		let miPrimeraPromise = new Promise((resolve, reject) => {
-			data = d3.json("https://raw.githubusercontent.com/ruedakax/ruedakax.github.io/master/crisitna/final.json")
+			data = d3.json("https://raw.githubusercontent.com/ruedakax/ruedakax.github.io/master/crisitna/final.json");
+			resolve("todo ok");
 		});
 
 		miPrimeraPromise.then((successMessage) => {
+			console.log("¡Sí! " + successMessage);
 			var arc = d3.arc()
 			.startAngle(d => d.x0)
 			.endAngle(d => d.x1)
