@@ -25,16 +25,19 @@ document.querySelector('#aleatoria').addEventListener('click',(event)=> {
     if(!bloque){
         popUp('Debe elegir una tirada')
     }else{        
-        document.querySelector('.loader').classList.remove('oculto')
-        pasarCarta(tiradas,bloque.id,indice,sacadas)
-        setTimeout(function () {            
-            document.querySelector('.loader').classList.add('oculto')
-        }, 1000);
+        if(indice < tiradas[bloque.id].posiciones){
+            document.querySelector('.loader').classList.remove('oculto')
+            pasarCarta(indice,sacadas)
+            setTimeout(function () {            
+                document.querySelector('.loader').classList.add('oculto')
+            }, 1000);
+        }else{
+            popUp('Ya se completó la tirada')
+        }        
     }
 })
 
-let pasarCarta = (tiradas,tirada,indice,sacadas) => {
-    if(indice < tiradas[tirada].posiciones){       
+let pasarCarta = (indice,sacadas) => {    
         let numero = nroAleatorio(sacadas)
         let carta = tarot[numero]
         let imagen = carta.img
@@ -47,9 +50,6 @@ let pasarCarta = (tiradas,tirada,indice,sacadas) => {
         let main = document.querySelector('.main')
         main.setAttribute('data-sacadas',actual)
         main.setAttribute('data-index',parseInt(indice) + 1)
-    }else{
-        popUp('Ya se completó la tirada')
-    }
 }
 
 let nroAleatorio = (cartasSacadas) => {    
