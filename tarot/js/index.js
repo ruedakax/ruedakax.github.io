@@ -26,8 +26,8 @@ document.querySelector('#aleatoria').addEventListener('click',(event)=> {
         popUp('Debe elegir una tirada')
     }else{        
         document.querySelector('.loader').classList.remove('oculto')
-        setTimeout(function () {
-            pasarCarta(tiradas,bloque.id,indice,sacadas)
+        pasarCarta(tiradas,bloque.id,indice,sacadas)
+        setTimeout(function () {            
             document.querySelector('.loader').classList.add('oculto')
         }, 1000);
     }
@@ -52,9 +52,7 @@ let pasarCarta = (tiradas,tirada,indice,sacadas) => {
     }
 }
 
-let nroAleatorio = (cartasSacadas) => {
-    /*console.log(cartasSacadas)
-    console.log(typeof cartasSacadas)*/
+let nroAleatorio = (cartasSacadas) => {    
     let cartaNumero = Math.floor((Math.random() * 77) + 0)
     while(cartasSacadas.includes(parseInt(cartaNumero))===true){
         cartaNumero = Math.floor((Math.random() * 77) + 0)
