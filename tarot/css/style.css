@@ -1,0 +1,205 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+body{
+  margin: 0;
+  font-family: 'Roboto';
+} 
+.wrapper{
+  min-height: 100vh;
+  background: #ccc;
+  display: flex;
+  flex-direction: column;
+}
+.header, .footer{
+  height: 50px;
+  background: #666;
+  color: #fff;
+}
+.content {
+  display: flex;
+  flex: 1;
+  background: #999;
+  color: #000; 
+}
+.columns{
+  display: flex;
+  flex:1;
+}
+.main{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:center;
+  flex: 1;
+  order: 2;
+  background: #eee;
+}
+.sidebar-first{
+  width: 20%;
+  background: #ccc;
+  order: 1;
+}
+.sidebar-second{
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  width: 20%;
+  order: 3;
+  background: #ddd;
+  padding: 5px;
+}
+
+ .block {
+    margin: 2px;
+    padding: 10px;    
+  }  
+  .linea{
+      display: flex;
+      flex-direction: row;      
+      margin:10px 0 10px 0;
+      justify-content:center;      
+  }   
+  .carta {            
+      width: 45px;
+      height: 75px;
+      background-color: #7FDBFF;
+      border-radius: 5px;
+      margin: 20px 3px 3px 3px;    
+      box-shadow: 3px 3px 1px rgb(71, 71, 71,0.2); 
+  }
+
+  .carta-centro {            
+    width: 120px;
+    height: 195px;
+    background-color: #7FDBFF;
+    border-radius: 5px;  
+    box-shadow: 5px 3px 2px rgb(71, 71, 71,0.2); 
+    margin: 20px 3px 3px 3px;  
+  } 
+
+  .carta-mazo {            
+    width: 120px;
+    height: 195px;
+    background-color: #7FDBFF;
+    border-radius: 5px; 
+    box-shadow: 5px 3px 2px rgb(71, 71, 71,0.2);   
+  }   
+
+  .reverse {
+    transform: rotate(180deg);
+  }
+
+  .imagen {
+    border-radius: 5px;
+    cursor: pointer; 
+  }
+  
+  /*button*/
+  .seleccion:hover {
+    letter-spacing: 0.8em;
+    background-color: #F08C99;
+  }
+  
+  .seleccion {
+    color: white;
+  }
+
+  button {
+    height: 4em;
+    width: 100%;
+    padding: 1.5em auto;
+    margin: 1em auto;
+    background-color: #FEB1C0;
+    border: none;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    transition: all 0.2s cubic-bezier(.4,0,.2,1);
+  }   
+  /*****/
+
+.oculto{
+  visibility: hidden;
+}
+.pantalla{
+  visibility: visible;
+}
+
+.popup {
+  visibility: hidden;
+  border-radius: 6px;
+  background-color: #FEB1C0;
+  position: fixed;
+  width: 15%;
+  text-align: center;
+  top: 1%;
+  left: 50%;
+  padding: 10px;
+  transform: translate(-50%, 0);
+  border:1px solid #fc6778;
+  color: white;
+}
+
+.show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+} 
+
+.loader{
+  /*visibility: hidden;*/
+  position: absolute;
+  top:0px;
+  right:0px;
+  width:100%;
+  height:100%;
+  background-color:rgb(31, 31, 35);
+  background-image:url('../img/loader.gif');
+  background-size: 20%;
+  background-repeat:no-repeat;
+  background-position:center;
+  z-index:10000000;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+
+/* Mostrando los tooltips*/
+div.carta-centro:hover > .tooltip {
+	display: block;
+}
+
+/* Tooltip CSS 2.1 */
+.tooltip:before {    
+    content: "";
+    height: 0;    
+    position: absolute;
+    width: 0;
+}
+.tooltip {
+    background-color: #777777;
+    color: #FFFFFF;
+    display: none;
+    left: 38%;
+    padding: 10px 20px;
+    position: absolute;    
+}
+
+

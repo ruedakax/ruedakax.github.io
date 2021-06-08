@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->        
+        <div class="loader oculto"></div>
+        <div class="wrapper">            
+            <div class="popup" id="myPopup"></div>            
+            <header class="header">Header: Fixed height</header>
+            <section class="content">              
+              <div class="columns">
+                <main class="main" data-index="0" data-sacadas=""></main>
+                <aside class="sidebar-first">
+                  <div class="block">                    
+                    <div class="linea">
+                       <div class="carta"></div>
+                    </div>
+                    <button class="seleccion tirada" id="t1">Elegir</button>
+                  </div>
+                  <div class="block">                    
+                    <div class="linea">                       
+                       <div class="carta"></div>
+                       <div class="carta"></div>
+                       <div class="carta"></div>                       
+                    </div>
+                    <button class="seleccion tirada" id="t2">Elegir</button>
+                  </div>
+                  <div class="block">                      
+                      <div class="linea">
+                         <div class="carta"></div>
+                         <div class="carta"></div>
+                         <div class="carta"></div>
+                         <div class="carta"></div>
+                      </div>      
+                      <div class="linea">
+                         <div class="carta"></div>
+                         <div class="carta"></div>
+                         <div class="carta"></div>
+                         <div class="carta"></div>
+                      </div>
+                      <button class="seleccion tirada" id="t3">Elegir</button> 
+                  </div>           
+                </aside>
+                <aside class="sidebar-second">
+                  <div class="block">
+                     <div class="linea">                       
+                        <div class="carta-mazo"></div>                       
+                     </div>      
+                  </div>
+                  <button class="seleccion" id="aleatoria">Sacar Carta Aleatoria</button>
+                </aside>              
+            </section>
+            <footer class="footer">Footer: Fixed height</footer>
+        </div>          
+        <script type="module" src="./js/index.js"></script>
+    </body>
+</html>
