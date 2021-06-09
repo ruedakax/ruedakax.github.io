@@ -1,7 +1,7 @@
 import {tirada_1} from './tirada_1.js'
 import {tirada_2} from './tirada_2.js'
 import {tirada_3} from './tirada_3.js'
-import {tarot} from './tarot.js'
+import {tarot}    from './tarot.js'
 
 const tiradas = {'t1':tirada_1,'t2':tirada_2,'t3':tirada_3}
 const direccion = ['normal','reverse']
@@ -16,7 +16,7 @@ document.querySelectorAll('.tirada').forEach(item => {
     })
 })
 
-document.querySelector('#aleatoria').addEventListener('click',(event)=> {
+document.querySelector('#aleatoria').addEventListener('click',(event) => {
     let main = document.querySelector('.main')
     let indice = main.getAttribute('data-index')
     let bloque = main.firstElementChild
@@ -37,7 +37,7 @@ document.querySelector('#aleatoria').addEventListener('click',(event)=> {
     }
 })
 
-let pasarCarta = (indice,sacadas) => {    
+let pasarCarta = (indice,sacadas) => {
         let numero = nroAleatorio(sacadas)
         let carta = tarot[numero]
         let imagen = carta.img
@@ -80,7 +80,7 @@ let crearNodoTooltip = (name) => {
     return tip
 }
 
-let popUp = (mensaje)=>{
+let popUp = (mensaje) => {
   let popup = document.querySelector("#myPopup");
   popup.innerHTML = mensaje
   popup.classList.add("show");

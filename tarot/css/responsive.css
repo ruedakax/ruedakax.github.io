@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box; 
+  }
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    margin: 0;
+  }
+  #main {
+    display: flex;
+    flex: 1;
+    background: #eee;
+  }
+  #main > article {
+    flex: 1;
+  }
+  #main > nav, 
+  #main > aside {
+    background: #ddd;
+    width:20vw;
+  }
+  #main > nav {
+    order: -1;
+  }
+  header, footer {
+    background: #666;
+    color: #fff;
+    height: 7vh;
+  }
+  header, footer, article, nav, aside {
+    padding: 1em;
+  }
+  @media screen and (max-width: 575px) {
+    #main {
+      flex-direction: column;
+    }
+    #main > nav, 
+    #main > aside {       
+        width:100vw;
+    }
+ }

@@ -9,28 +9,48 @@
 body{
   margin: 0;
   font-family: 'Roboto';
-} 
+}
+
 .wrapper{
   min-height: 100vh;
   background: #ccc;
   display: flex;
   flex-direction: column;
 }
+
+@media screen and (max-width: 600px) {
+  .wrapper {
+    flex-direction: row;
+  }
+}
+
 .header, .footer{
   height: 50px;
-  background: #666;
-  color: #fff;
+  background: #221A49;  
 }
+.footer{
+  height: 50px;
+  background: #E30E29;
+}
+
 .content {
   display: flex;
   flex: 1;
   background: #999;
   color: #000; 
 }
+
 .columns{
   display: flex;
   flex:1;
 }
+
+@media screen and (max-width: 600px) {
+  .columns {
+    flex-direction: row;
+  }
+}
+
 .main{
   display: flex;
   flex-direction: row;
@@ -38,13 +58,19 @@ body{
   align-items:center;
   flex: 1;
   order: 2;
-  background: #eee;
+  background-color: #eee;
+  background-image: url("../img/fondo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position:center;
 }
+
 .sidebar-first{
   width: 20%;
-  background: #ccc;
+  background: #9087B2;
   order: 1;
 }
+
 .sidebar-second{
   display: flex; 
   flex-direction: column;
@@ -52,78 +78,84 @@ body{
   align-items:center;
   width: 20%;
   order: 3;
-  background: #ddd;
+  background: #9087B2;
   padding: 5px;
 }
 
- .block {
-    margin: 2px;
-    padding: 10px;    
-  }  
-  .linea{
-      display: flex;
-      flex-direction: row;      
-      margin:10px 0 10px 0;
-      justify-content:center;      
-  }   
-  .carta {            
-      width: 45px;
-      height: 75px;
-      background-color: #7FDBFF;
-      border-radius: 5px;
-      margin: 20px 3px 3px 3px;    
-      box-shadow: 3px 3px 1px rgb(71, 71, 71,0.2); 
-  }
+.block {
+  margin: 2px;
+  padding: 10px;    
+}
 
-  .carta-centro {            
-    width: 120px;
-    height: 195px;
-    background-color: #7FDBFF;
-    border-radius: 5px;  
-    box-shadow: 5px 3px 2px rgb(71, 71, 71,0.2); 
-    margin: 20px 3px 3px 3px;  
-  } 
+.linea{
+    display: flex;
+    flex-direction: row;      
+    margin:10px 0 10px 0;
+    justify-content:center;
+}
 
-  .carta-mazo {            
-    width: 120px;
-    height: 195px;
-    background-color: #7FDBFF;
-    border-radius: 5px; 
-    box-shadow: 5px 3px 2px rgb(71, 71, 71,0.2);   
-  }   
-
-  .reverse {
-    transform: rotate(180deg);
-  }
-
-  .imagen {
+.carta {            
+    width: 45px;
+    height: 75px;    
     border-radius: 5px;
-    cursor: pointer; 
-  }
-  
-  /*button*/
-  .seleccion:hover {
-    letter-spacing: 0.8em;
-    background-color: #F08C99;
-  }
-  
-  .seleccion {
-    color: white;
-  }
+    margin: 20px 3px 3px 3px;    
+    box-shadow: 3px 3px 1px rgb(71, 71, 71,0.2); 
+}
 
-  button {
-    height: 4em;
-    width: 100%;
-    padding: 1.5em auto;
-    margin: 1em auto;
-    background-color: #FEB1C0;
-    border: none;
-    border-radius: 3px;
-    text-transform: uppercase;
-    letter-spacing: 0.5em;
-    transition: all 0.2s cubic-bezier(.4,0,.2,1);
-  }   
-  /*****/
+.atras{
+  background-color: #7FDBFF;
+  background-image: url("../img/reverso.png");    
+  background-size: contain;
+  background-position:center;
+  border-radius: 5px;
+}
+
+.carta-centro {            
+  width: 120px;
+  height: 195px;
+  box-shadow: 5px 3px 2px rgb(71, 71, 71,0.2); 
+  margin: 20px 3px 3px 3px;  
+} 
+
+.carta-mazo {            
+  width: 120px;
+  height: 195px;  
+  box-shadow: 5px 3px 2px rgb(71, 71, 71,0.2);   
+}   
+
+.reverse {
+  transform: rotate(180deg);
+}
+
+.imagen {
+  border-radius: 5px;
+  cursor: pointer; 
+}
+
+/*button*/
+.seleccion:hover {
+  letter-spacing: 0.8em;
+  background-color: #F7BD8e;
+}
+
+.seleccion {
+  color: #773136;
+  
+}
+
+button {
+  height: 4em;
+  width: 100%;
+  padding: 1.5em auto;
+  margin: 1em auto;
+  background-color: #FED7B8;
+  border: none;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  transition: all 0.2s cubic-bezier(.4,0,.2,1);  
+}   
+/*****/
 
 .oculto{
   visibility: hidden;
@@ -169,8 +201,8 @@ body{
   position: absolute;
   top:0px;
   right:0px;
-  width:100%;
-  height:100%;
+  width:100vw;
+  height:100vh;
   background-color:rgb(31, 31, 35);
   background-image:url('../img/loader.gif');
   background-size: 20%;
@@ -201,5 +233,3 @@ div.carta-centro:hover > .tooltip {
     padding: 10px 20px;
     position: absolute;    
 }
-
-
