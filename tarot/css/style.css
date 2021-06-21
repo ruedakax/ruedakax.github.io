@@ -28,10 +28,7 @@ body{
   height: 50px;
   background: #221A49;  
 }
-.footer{
-  height: 50px;
-  background: #E30E29;
-}
+
 
 .content {
   display: flex;
@@ -102,6 +99,13 @@ body{
     box-shadow: 3px 3px 1px rgb(71, 71, 71,0.2); 
 }
 
+.carta-espacio {  
+    width: 45px;
+    height: 75px;    
+    border-radius: 5px;
+    margin: 3px 3px 3px 3px;   
+  }
+
 .atras{
   background-color: #7FDBFF;
   background-image: url("../img/reverso.png");    
@@ -111,8 +115,8 @@ body{
 }
 
 .carta-centro {            
-  width: 120px;
-  height: 195px;
+  width: 140px;
+  height: 232px;
   box-shadow: 5px 3px 2px rgb(71, 71, 71,0.2); 
   margin: 20px 3px 3px 3px;  
 } 
@@ -143,7 +147,7 @@ body{
   
 }
 
-button {
+button.seleccion {
   height: 4em;
   width: 100%;
   padding: 1.5em auto;
@@ -233,3 +237,39 @@ div.carta-centro:hover > .tooltip {
     padding: 10px 20px;
     position: absolute;    
 }
+
+ 
+  button.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    border-bottom: 1px solid #221A49;
+    border-right: 1px solid #221A49;
+  }
+  
+  .abierto, .accordion:hover {
+    background-color: #ccc; 
+  }
+  
+  .panel {
+    padding: 0 18px;
+    display: none;
+    background-color: #9087B2;
+    overflow: hidden;
+  }
+
+  .titular {
+    background-color:#F7BD8e;
+    text-align: center;
+    padding: 18px;
+    letter-spacing: 0.5em;
+    border-bottom: 1px solid #221A49;
+    border-right: 1px solid #221A49;
+    color: #773136;
+  }

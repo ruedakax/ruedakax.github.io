@@ -15,56 +15,113 @@
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->        
+        <![endif]-->
         <div class="loader oculto"></div>
-        <header class="header">Header: Fixed height</header>
-        <div class="wrapper">            
-            <div class="popup" id="myPopup"></div>                        
-            <section class="content">              
+        <header class="header">Header: Fixed height</header>        
+        <div class="wrapper">
+            <div class="popup" id="myPopup"></div>              
+            <section class="content">
               <div class="columns">
                 <main class="main" data-index="0" data-sacadas=""></main>
                 <aside class="sidebar-first">
-                  <div class="block">                    
+                  <div class="titular">Tiradas</div>
+                  <button class="accordion">Carta Guía</button>
+                  <div class="panel">                    
                     <div class="linea">
                        <div class="carta atras"></div>
                     </div>
                     <button class="seleccion tirada" id="t1">Elegir</button>
                   </div>
-                  <div class="block">                    
-                    <div class="linea">                       
-                       <div class="carta atras"></div>
-                       <div class="carta atras"></div>
-                       <div class="carta atras"></div>                       
+                  <button class="accordion">Empoderamiento</button>
+                  <div class="panel">                    
+                    <div class="linea">    
+                      <div class="carta atras"></div>                       
+                    </div>
+                    <div class="linea">     
+                      <div class="carta atras"></div>
+                      <div class="carta atras"></div>
+                      <div class="carta atras"></div>
+                      <div class="carta atras"></div>                   
                     </div>
                     <button class="seleccion tirada" id="t2">Elegir</button>
                   </div>
-                  <div class="block">                      
-                      <div class="linea">
-                         <div class="carta atras"></div>
-                         <div class="carta atras"></div>
-                         <div class="carta atras"></div>
-                         <div class="carta atras"></div>
-                      </div>      
-                      <div class="linea">
-                         <div class="carta atras"></div>
-                         <div class="carta atras"></div>
-                         <div class="carta atras"></div>
-                         <div class="carta atras"></div>
-                      </div>
-                      <button class="seleccion tirada" id="t3">Elegir</button> 
+                  <button class="accordion">Compresión</button>
+                  <div class="panel">
+                    <div class="linea">
+                      <div class="carta atras"></div>
+                      <div class="carta atras"></div>
+                      <div class="carta atras"></div>                      
+                    </div>
+                    <button class="seleccion tirada" id="t3">Elegir</button> 
+                  </div>
+                  <button class="accordion">Pequeña Cruz</button>
+                  <div class="panel">                    
+                    <div class="linea">    
+                      <div class="carta atras"></div>                       
+                    </div>
+                    <div class="linea">     
+                      <div class="carta atras"></div>
+                      <div class="carta atras"></div>
+                      <div class="carta atras"></div>                       
+                    </div>
+                    <div class="linea">     
+                      <div class="carta atras"></div>                      
+                    </div>
+                    <div class="linea">     
+                      <div class="carta atras"></div>                      
+                    </div>
+                    <button class="seleccion tirada" id="t4">Elegir</button>
+                  </div>
+                  <button class="accordion">Relaciones</button>
+                  <div class="panel">                    
+                    <div class="linea">    
+                       <div class="carta atras"></div>                       
+                    </div>
+                    <div class="linea">     
+                       <div class="carta atras"></div>
+                       <div class="carta atras"></div>
+                       <div class="carta atras"></div>                       
+                       <div class="carta atras"></div>                       
+                    </div>
+                    <div class="linea">     
+                      <div class="carta atras"></div>                      
+                    </div>                    
+                    <button class="seleccion tirada" id="t5">Elegir</button>
+                  </div>           
+                  <button class="accordion">Desiciones</button>
+                  <div class="panel">                    
+                    <div class="linea">    
+                       <div class="carta-espacio"></div>
+                       <div class="carta atras"></div>
+                       <div class="carta atras"></div>
+                       <div class="carta atras"></div>                                             
+                    </div>                                        
+                    <div class="linea">     
+                      <div class="carta atras"></div>
+                      <div class="carta-espacio"></div>
+                      <div class="carta-espacio"></div>                       
+                      <div class="carta-espacio"></div>                       
+                    </div>
+                    <div class="linea">    
+                      <div class="carta-espacio"></div>
+                      <div class="carta atras"></div>
+                      <div class="carta atras"></div>
+                      <div class="carta atras"></div>                                             
+                   </div>
+                    <button class="seleccion tirada" id="t6">Elegir</button>
                   </div>           
                 </aside>
                 <aside class="sidebar-second">
                   <div class="block">
                      <div class="linea">                       
-                        <div class="carta-mazo atras"></div>
+                        <div class="carta-mazo atras"></div>                       
                      </div>      
                   </div>
                   <button class="seleccion" id="aleatoria">Sacar Carta Aleatoria</button>
                 </aside>              
-            </section>            
-        </div>
-        <footer class="footer">Footer: Fixed height</footer>          
+            </section>
+            <footer class="footer">Footer: Fixed height</footer>
+        </div>          
         <script type="module" src="./js/index.js"></script>
     </body>
 </html>
