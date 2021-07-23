@@ -69,7 +69,11 @@ let pasarCarta = (indice,sacadas) => {
 }
 
 let nroAleatorio = (cartasSacadas) => {    
+
+	console.log(typeof cartasSacadas)
+	console.log(cartasSacadas)
     let cartaNumero = Math.floor((Math.random() * 77) + 0)
+	console.log(cartasSacadas.includes(parseInt(cartaNumero)))
     while(cartasSacadas.includes(parseInt(cartaNumero))===true){
         cartaNumero = Math.floor((Math.random() * 77) + 0)
     }
